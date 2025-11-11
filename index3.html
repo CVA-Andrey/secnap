@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secnap - Expert-Driven Hybrid Intelligence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Secnap Brand Colors from actual site */
+        :root {
+            --secnap-orange: #FF4D00;
+            --secnap-dark-purple: #1a0d2e;
+            --secnap-purple: #2d1b4e;
+            --secnap-magenta: #d946ef;
+            --secnap-pink: #ec4899;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #fff;
+            background: #000;
+        }
+
+        /* Hero section with purple gradient */
+        .hero-section {
+            background: linear-gradient(135deg, #0a0118 0%, #1a0d2e 50%, #2d1b4e 100%);
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: radial-gradient(circle at top right, rgba(217, 70, 239, 0.1) 0%, transparent 50%);
+        }
+
+        .section-py {
+            padding: 100px 0;
+        }
+
+        .bg-dark-purple {
+            background: linear-gradient(135deg, #0a0118 0%, #1a0d2e 100%);
+        }
+
+        .bg-secnap-orange {
+            background-color: var(--secnap-orange);
+        }
+
+        .text-secnap-orange {
+            color: var(--secnap-orange);
+        }
+
+        .text-secnap-magenta {
+            color: var(--secnap-magenta);
+        }
+
+        .btn-secnap-orange {
+            background-color: var(--secnap-orange);
+            color: white;
+            border: none;
+        }
+
+        .btn-secnap-orange:hover {
+            background-color: #e64500;
+            color: white;
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(217, 70, 239, 0.2);
+        }
+
+        .card-dark {
+            background: rgba(26, 13, 46, 0.5);
+            border: 1px solid rgba(217, 70, 239, 0.2);
+        }
+
+        .icon-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secnap-magenta), var(--secnap-pink));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar-dark {
+            background: rgba(10, 1, 24, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top border-bottom" style="border-color: rgba(217, 70, 239, 0.2) !important;">
+    <div class="container py-2">
+        <a class="navbar-brand fw-bold fs-4" href="#">
+            <span class="text-white">&gt;_</span>
+            <span class="text-white">secnap</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item px-2"><a class="nav-link text-white" href="#solutions">Solutions</a></li>
+                <li class="nav-item px-2"><a class="nav-link text-white" href="#services">Services</a></li>
+                <li class="nav-item px-2"><a class="nav-link text-white" href="#about">About Us</a></li>
+                <li class="nav-item px-2"><a class="nav-link text-white" href="#resources">Resources</a></li>
+                <li class="nav-item px-2">
+                    <a class="btn btn-secnap-orange px-4 rounded-pill" href="#contact">SCHEDULE A DEMO</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="btn btn-outline-light px-4 rounded-pill" href="#login">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center position-relative">
+    <div class="container position-relative" style="z-index: 1;">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="mb-3">
+                    <span class="text-secnap-orange fw-bold">&gt;_</span>
+                </div>
+                <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1;">
+                    Expert-Driven<br>
+                    <span class="text-white">Hybrid Intelligence</span>
+                    <span class="text-secnap-magenta">!</span>
+                </h1>
+                <p class="fs-5 mb-3 text-white" style="opacity: 0.9;">
+                    <strong>20+ years</strong> of empowering businesses to <strong>stay</strong><br>
+                    <strong>secure</strong> in the face of <strong>evolving threats</strong>.
+                </p>
+                <p class="fs-6 mb-5 pe-lg-5" style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    Protect your business with 24/7 monitoring, proactive threat hunting, and expert-driven<br>
+                    solutions tailored for growing organizations. Backed by unmatched technology and a<br>
+                    dedicated US-based team, we stop attackers in their tracks.
+                </p>
+                <a href="#contact" class="btn btn-secnap-orange btn-lg px-5 py-3 rounded-pill fw-semibold">SCHEDULE A DEMO</a>
+            </div>
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <div class="text-center mb-4">
+                    <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/6784308593dc97e8c1db5947_GSA-Advantage_Color_only_2020.png" alt="GSA Advantage" class="img-fluid mb-3" style="max-width: 180px;">
+                </div>
+                <div class="p-4 rounded-3" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(217, 70, 239, 0.2);">
+                    <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67784e6e4fb6885cd720e0f9_logo%402x.webp" alt="SOC2" class="img-fluid" style="max-width: 120px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comprehensive Cybersecurity -->
+<section class="section-py bg-black text-center">
+    <div class="container">
+        <p class="text-uppercase text-secnap-magenta mb-3 fw-semibold" style="letter-spacing: 2px;">WHY SECNAP?</p>
+        <h2 class="display-5 fw-bold mb-5 text-white">Comprehensive Cybersecurity</h2>
+        <p class="lead mx-auto text-white" style="max-width: 900px; opacity: 0.8; line-height: 1.8;">
+            Human expertise meets AI augmentation in our patented CloudJacket<br>
+            platform, delivering adaptive protection against emerging threats. Built from<br>
+            the ground up, CloudJacket rivals Fortune 100 defenses—at a price every<br>
+            business can afford.
+        </p>
+    </div>
+</section>
+
+<!-- Three Feature Cards -->
+<section class="py-5 bg-black">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-4">
+                            <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/68d304c0af70414924f62238_Home-AI%20Powered%402x.png" alt="Threat Intelligence" class="img-fluid" style="max-width: 200px;">
+                        </div>
+                        <h3 class="h5 fw-bold mb-3 text-white">Active Defense with Threat Intelligence Engine</h3>
+                        <p class="text-white-50 mb-4">Advanced security through behavioral, heuristic, and rules-based analyses, allowing our system to detect known threats and adapt to emerging ones.</p>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-pill px-4">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-4">
+                            <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e499fab76d9865a37f8_Home-247%20Protection%402x.png" alt="24/7 Protection" class="img-fluid" style="max-width: 200px;">
+                        </div>
+                        <h3 class="h5 fw-bold mb-3 text-white">24/7 Expert Protection with Proactive Monitoring</h3>
+                        <p class="text-white-50 mb-4">Around-the-clock threat hunting through our US-based Security Operations Center, with high fidelity detection ensuring every alert is relevant.</p>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-pill px-4">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-4">
+                            <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e499fab76d9865a37f8_Home-247%20Protection%402x.png" alt="Hybrid Security" class="img-fluid" style="max-width: 200px;">
+                        </div>
+                        <h3 class="h5 fw-bold mb-3 text-white">Hybrid Security with Real-Time Insights</h3>
+                        <p class="text-white-50 mb-4">Combining automated AI-driven detection with expert human analysis for comprehensive threat prevention and rapid incident response.</p>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-pill px-4">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section-py bg-dark-purple">
+    <div class="container">
+        <h2 class="display-6 fw-bold text-center mb-2 text-white text-uppercase" style="letter-spacing: 1px;">
+            TRUSTED CYBERSECURITY POWERED BY PEOPLE:
+        </h2>
+        <p class="text-center text-white mb-5 pb-4" style="opacity: 0.8;">
+            Protecting <strong>300+</strong> Businesses Worldwide Across Multiple Industries.
+        </p>
+        <div class="row text-center g-5">
+            <div class="col-6 col-md-3">
+                <div class="display-3 fw-bold text-white mb-3">300+</div>
+                <p class="text-white-50">Businesses protected</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="mb-3">
+                    <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67784e6e4fb6885cd720e0f9_logo%402x.webp" alt="SOC2" class="img-fluid" style="max-width: 120px;">
+                </div>
+                <p class="text-white-50">SOC2 TYPE II Certified</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="display-3 fw-bold text-white mb-3">80+</div>
+                <p class="text-white-50">Global partners</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="display-3 fw-bold text-white mb-3">98%</div>
+                <p class="text-white-50">Client Retention Rate</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="section-py bg-black">
+    <div class="container">
+        <h2 class="display-6 fw-bold text-center mb-5 pb-4 text-white">
+            Cybersecurity innovator protecting your<br>
+            business with <span class="text-secnap-orange">expert-driven analysis 24/7</span>
+        </h2>
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <div class="icon-badge mx-auto mb-3">
+                            <i class="bi bi-shield-check fs-3 text-white"></i>
+                        </div>
+                        <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e49fa6b2f53a00ac59d_Home-Proven%20Experience%402x.png" alt="Proven Experience" class="img-fluid" style="max-width: 120px;">
+                    </div>
+                    <h4 class="fw-bold mb-3 h5 text-white">Proven Experience</h4>
+                    <p class="text-white-50">Over two decades of cybersecurity expertise, with a proven track record of protecting businesses from emerging threats through cutting-edge R&D and innovation</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <div class="icon-badge mx-auto mb-3">
+                            <i class="bi bi-flag-fill fs-3 text-white"></i>
+                        </div>
+                        <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e4857c5ce777840d3fb_Home-US%20Based%402x.png" alt="US-Based Operations" class="img-fluid" style="max-width: 120px;">
+                    </div>
+                    <h4 class="fw-bold mb-3 h5 text-white">US-Based Operations</h4>
+                    <p class="text-white-50">Our expert analysts and engineers work 24/7 from US-based security operations centers, providing continuous monitoring and rapid response to threats</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <div class="icon-badge mx-auto mb-3">
+                            <i class="bi bi-person-check fs-3 text-white"></i>
+                        </div>
+                        <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e4acdf602de4098bbea_Home-Expert%20Driven%20Protection%402x.png" alt="Expert-Driven Protection" class="img-fluid" style="max-width: 120px;">
+                    </div>
+                    <h4 class="fw-bold mb-3 h5 text-white">Expert-Driven Protection</h4>
+                    <p class="text-white-50">Our seasoned cybersecurity experts fine-tune threat detection to reduce noise with precision that automated solutions can't match.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <div class="icon-badge mx-auto mb-3">
+                            <i class="bi bi-people-fill fs-3 text-white"></i>
+                        </div>
+                        <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67842e49083c94590f6ec3c3_Home-Partnership%402x.png" alt="True Partnership" class="img-fluid" style="max-width: 120px;">
+                    </div>
+                    <h4 class="fw-bold mb-3 h5 text-white">True Partnership</h4>
+                    <p class="text-white-50">Work directly with our expert team who serve as a seamless extension of your IT department without the delays of layered support bottlenecks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Orange CTA Banner -->
+<section class="py-5 bg-secnap-orange">
+    <div class="container text-center py-4">
+        <h3 class="display-6 fw-bold mb-4 text-white">Learn how</h3>
+        <p class="lead mb-4 text-white">Secnap can help your organization stay secure</p>
+        <a href="#contact" class="btn btn-light btn-lg px-5 py-3 rounded-pill fw-semibold">SCHEDULE A DEMO</a>
+    </div>
+</section>
+
+<!-- CloudJacket Section -->
+<section class="section-py bg-white text-dark">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-uppercase text-muted mb-3 fw-semibold" style="letter-spacing: 2px;">YOUR CYBERSECURITY PLATFORM</p>
+            <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67784e6e4fb6885cd720e0f9_logo%402x.webp" alt="CloudJacket Logo" class="img-fluid mb-4" style="max-width: 300px;">
+            <h2 class="display-6 fw-bold mb-3">Where Threat Intelligence & Research</h2>
+            <h2 class="display-6 fw-bold mb-4">Meets Human Expertise</h2>
+        </div>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/6778520b77d43b89f371f4e3_cloudjacket-icon%402x.png" alt="CloudJacket Platform" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <p class="fs-5 mb-4 text-secondary" style="line-height: 1.8;">
+                    CloudJacket MDR is a complete solution with a 24/7 AI-assisted SOC and security expertise to protect your organization from cyber threats, delivering enterprise-grade protection without the complexity.
+                </p>
+                <a href="#cloudjacket" class="btn btn-secnap-orange btn-lg px-5 py-3 rounded-pill fw-semibold">LEARN MORE</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="section-py bg-white text-dark">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Intelligent Security Operations</h2>
+            <p class="lead text-secondary">Secnap's comprehensive security methodology combines advanced threat intelligence<br>with expert-driven analysis through a proven five-stage process.</p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mb-5 flex-wrap gap-3">
+            <h3 class="fw-bold mb-0">prepare</h3>
+            <span class="text-secnap-magenta fs-2">&gt;</span>
+            <h3 class="fw-bold mb-0">detect</h3>
+            <span class="text-secnap-magenta fs-2">&gt;</span>
+            <h3 class="fw-bold mb-0">respond</h3>
+            <span class="text-secnap-magenta fs-2">&gt;</span>
+            <h3 class="fw-bold mb-0">investigate</h3>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card border h-100">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Prepare</h4>
+                        <p class="text-secondary mb-0">Easily implement Security Awareness Training (SAT), Vulnerability Scanning, and proactively monitor the dark web for compromised credentials.</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4 mt-3">LEARN MORE &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border h-100">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Detect</h4>
+                        <p class="text-secondary mb-0">Continuous monitoring and advanced threat detection systems identify potential security incidents across your entire infrastructure.</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4 mt-3">LEARN MORE &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border h-100">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Respond</h4>
+                        <p class="text-secondary mb-0">Rapid response protocols with expert-driven containment strategies to minimize impact and prevent escalation.</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4 mt-3">LEARN MORE &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border h-100">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Investigate</h4>
+                        <p class="text-secondary mb-0">Our security experts leverage advanced threat intelligence insights paired with forensic analysis to investigate malicious activity.</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4 mt-3">LEARN MORE &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="section-py bg-dark-purple">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-uppercase text-secnap-magenta mb-3 fw-semibold" style="letter-spacing: 2px;">OUR SERVICES</p>
+            <h2 class="display-6 fw-bold mb-3 text-white">We offer <span class="text-secnap-orange">specialized assessment services</span></h2>
+            <p class="lead text-white-50">and security control solutions to protect your enterprise assets</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="icon-badge flex-shrink-0">
+                                <i class="bi bi-shield-check fs-4 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3 h5 text-white">Comprehensive Security Assessments</h4>
+                                <p class="text-white-50 mb-0">Internal and external vulnerability scanning, and infrastructure analysis to identify potential security gaps before they can be exploited by malicious actors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="icon-badge flex-shrink-0">
+                                <i class="bi bi-globe fs-4 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3 h5 text-white">Web Application & Dark Web Intelligence</h4>
+                                <p class="text-white-50 mb-0">Advanced testing of web applications and continuous dark web monitoring to protect your digital assets and detect compromised credentials.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="icon-badge flex-shrink-0">
+                                <i class="bi bi-clipboard-check fs-4 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3 h5 text-white">Compliance & Risk Management</h4>
+                                <p class="text-white-50 mb-0">Proactive compliance assessments and documentation to ensure regulatory adherence, minimize potential fines, and maintain strong security posture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-dark h-100 card-hover">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="icon-badge flex-shrink-0">
+                                <i class="bi bi-lightbulb fs-4 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3 h5 text-white">Strategic Security Services</h4>
+                                <p class="text-white-50 mb-0">Expert-led cybersecurity consulting and training to strengthen your overall security program and enhance employee security awareness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final Orange CTA -->
+<section class="py-5 bg-secnap-orange">
+    <div class="container text-center py-5">
+        <h3 class="display-5 fw-bold mb-4 text-white">Let us</h3>
+        <p class="lead mb-5 text-white">protect your business from cyber threats</p>
+        <a href="#contact" class="btn btn-light btn-lg px-5 py-3 rounded-pill fw-semibold">SCHEDULE A DEMO</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark-purple text-white py-5">
+    <div class="container">
+        <div class="row g-4 py-4">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="fw-bold fs-4 mb-3">
+                    <span class="text-secnap-orange">&gt;_</span> secnap
+                </h5>
+                <p class="text-white-50">Expert-driven cybersecurity solutions protecting businesses worldwide for over 20 years.</p>
+            </div>
+            <div class="col-lg-8">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <h6 class="fw-bold mb-3 text-white">Solutions</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">CloudJacket MDR</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Threat Intelligence</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">24/7 Monitoring</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold mb-3 text-white">Services</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Security Assessments</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Compliance</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Consulting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold mb-3 text-white">Company</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 opacity-25" style="border-color: rgba(217, 70, 239, 0.3);">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0 text-white-50 small">&copy; 2025 Secnap Network Security Corporation. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 text-decoration-none me-3 small">Privacy Policy</a>
+                <a href="#" class="text-white-50 text-decoration-none small">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

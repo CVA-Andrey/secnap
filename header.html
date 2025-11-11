@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECNAP Header & Navbar - Exact Recreation</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 120px;
+        }
+
+        /* Top Header */
+        .top-header {
+            background-color: #0a192f;
+            color: #8892b0;
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid #112240;
+        }
+
+        .top-header a {
+            color: #8892b0;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .top-header a:hover {
+            color: #64ffda;
+        }
+
+        .top-header .social-icons a {
+            margin-right: 15px;
+        }
+
+        .top-header .social-icons a i {
+            font-size: 14px;
+        }
+
+        /* Main Header */
+        .main-header {
+            background-color: #0a192f;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 36px;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled {
+            top: 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled .navbar {
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s;
+        }
+
+        .main-header.scrolled .navbar-brand img {
+            height: 35px;
+        }
+
+        /* Navigation */
+        .navbar-nav .nav-link {
+            color: #ccd6f6 !important;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 15px !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #64ffda !important;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #64ffda;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        .btn-contact {
+            background: linear-gradient(90deg, #64ffda 0%, #4de0c7 100%);
+            color: #0a192f !important;
+            border-radius: 4px;
+            padding: 8px 20px !important;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
+            margin-left: 15px;
+        }
+
+        .btn-contact:hover {
+            background: linear-gradient(90deg, #7affdf 0%, #5ff0d1 100%);
+            color: #0a192f !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(100, 255, 218, 0.4);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 5px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Mega Menu */
+        .mega-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #0a192f;
+            padding: 30px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-top: 1px solid #112240;
+        }
+
+        .navbar-nav > li:hover .mega-menu {
+            display: block;
+        }
+
+        .mega-menu h6 {
+            color: #64ffda;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .mega-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mega-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .mega-menu ul li a {
+            color: #8892b0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .mega-menu ul li a:hover {
+            color: #64ffda;
+            padding-left: 5px;
+        }
+
+        .mega-menu .menu-item {
+            padding: 0 20px;
+        }
+
+        .mega-menu .highlight {
+            background-color: #112240;
+            border-radius: 4px;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .mega-menu .highlight h6 {
+            margin-top: 0;
+        }
+
+        .mega-menu .highlight p {
+            color: #8892b0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .mega-menu .highlight .btn {
+            background: linear-gradient(90deg, #64ffda 0%, #4de0c7 100%);
+            color: #0a192f;
+            border-radius: 4px;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: 15px;
+            border: none;
+        }
+
+        .mega-menu .highlight .btn:hover {
+            background: linear-gradient(90deg, #7affdf 0%, #5ff0d1 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 991.98px) {
+            .main-header {
+                top: 0;
+            }
+
+            .navbar-nav {
+                padding: 20px 0;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 12px 20px !important;
+                border-bottom: 1px solid #112240;
+            }
+
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .btn-contact {
+                margin: 15px 20px;
+                display: block;
+                text-align: center;
+            }
+
+            .mega-menu {
+                position: static;
+                display: none;
+                padding: 0;
+                box-shadow: none;
+                border-top: none;
+            }
+
+            .mega-menu.show {
+                display: block;
+            }
+
+            .mega-menu .row {
+                margin: 0;
+            }
+
+            .mega-menu .menu-item {
+                padding: 15px 20px;
+                border-bottom: 1px solid #112240;
+            }
+
+            .mega-menu .menu-item:last-child {
+                border-bottom: none;
+            }
+
+            .mega-menu .highlight {
+                background-color: transparent;
+                padding: 15px 20px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: #fff;
+            padding: 120px 0 100px;
+            text-align: center;
+            margin-top: -80px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .hero .btn {
+            background: linear-gradient(90deg, #64ffda 0%, #4de0c7 100%);
+            color: #0a192f;
+            border-radius: 4px;
+            padding: 12px 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+            margin: 0 10px;
+        }
+
+        .hero .btn:hover {
+            background: linear-gradient(90deg, #7affdf 0%, #5ff0d1 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+        }
+
+        .hero .btn-outline {
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            box-shadow: none;
+        }
+
+        .hero .btn-outline:hover {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section h2 {
+            color: #0a192f;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .content-section p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Placeholder */
+        .footer-placeholder {
+            background-color: #0a192f;
+            color: #8892b0;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<!-- Top Header -->
+<div class="top-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 d-none d-md-block">
+                <a href="#"><i class="bi bi-telephone me-2"></i>+1 (844) 732-6271</a>
+                <a href="#"><i class="bi bi-envelope me-2"></i>info@secnap.com</a>
+            </div>
+            <div class="col-md-6 text-md-end text-center">
+                <div class="social-icons d-inline-block">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+                <a href="#" class="ms-3">Client Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.secnap.com/wp-content/uploads/2021/09/secnap-logo-white.png" alt="SECNAP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">Solutions</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3 menu-item">
+                                        <h6>Security Solutions</h6>
+                                        <ul>
+                                            <li><a href="#">Network Security</a></li>
+                                            <li><a href="#">Email Security</a></li>
+                                            <li><a href="#">Web Security</a></li>
+                                            <li><a href="#">Endpoint Security</a></li>
+                                            <li><a href="#">Cloud Security</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 menu-item">
+                                        <h6>Compliance</h6>
+                                        <ul>
+                                            <li><a href="#">HIPAA Compliance</a></li>
+                                            <li><a href="#">PCI DSS Compliance</a></li>
+                                            <li><a href="#">SOX Compliance</a></li>
+                                            <li><a href="#">GDPR Compliance</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 menu-item">
+                                        <h6>Managed Services</h6>
+                                        <ul>
+                                            <li><a href="#">Managed Security</a></li>
+                                            <li><a href="#">Threat Intelligence</a></li>
+                                            <li><a href="#">Incident Response</a></li>
+                                            <li><a href="#">Vulnerability Management</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 menu-item">
+                                        <div class="highlight">
+                                            <h6>Why SECNAP?</h6>
+                                            <p>Industry-leading security solutions with 24/7 monitoring and expert support.</p>
+                                            <a href="#" class="btn">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">Industries</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3 menu-item">
+                                        <h6>By Industry</h6>
+                                        <ul>
+                                            <li><a href="#">Healthcare</a></li>
+                                            <li><a href="#">Financial Services</a></li>
+                                            <li><a href="#">Education</a></li>
+                                            <li><a href="#">Government</a></li>
+                                            <li><a href="#">Retail</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 menu-item">
+                                        <h6>By Size</h6>
+                                        <ul>
+                                            <li><a href="#">Small Business</a></li>
+                                            <li><a href="#">Mid-Market</a></li>
+                                            <li><a href="#">Enterprise</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 menu-item">
+                                        <div class="highlight">
+                                            <h6>Tailored Security Solutions</h6>
+                                            <p>Customized security strategies for your specific industry requirements and compliance needs.</p>
+                                            <a href="#" class="btn">View Case Studies</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Support</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-contact">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Enterprise-Grade Cybersecurity Solutions</h1>
+        <p>Protect your business with SECNAP's comprehensive security platform designed to defend against evolving cyber threats.</p>
+        <div class="mt-4">
+            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn btn-outline">Request Demo</a>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Advanced Security Solutions for Modern Businesses</h2>
+                <p>SECNAP provides comprehensive cybersecurity solutions designed to protect your organization from today's sophisticated threats. Our platform combines advanced threat detection, real-time monitoring, and expert security services to keep your business secure.</p>
+                <p>With our multi-layered approach, we offer network security, email protection, web filtering, endpoint security, and cloud security solutions. Our managed security services provide 24/7 monitoring and rapid incident response to ensure your business stays protected at all times.</p>
+                <p>Whether you're a small business or a large enterprise, our tailored solutions can be customized to meet your specific security requirements and compliance needs. Our team of security experts works around the clock to protect your digital assets and ensure business continuity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Placeholder -->
+<footer class="footer-placeholder">
+    <div class="container">
+        <p>© 2023 SECNAP Network Security. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle for mega menu
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    const megaMenu = this.nextElementSibling;
+                    megaMenu.classList.toggle('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
