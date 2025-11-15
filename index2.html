@@ -4,22 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Expert-Driven Hybrid Intelligence | Secnap</title>
-  <meta name="description" content="20+ Years of helping growing businesses successfully fight cyberattacks. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+  <meta name="description" content="20+ Years of helping growing businesses successfully fight cyberattacks.">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Expert-Driven Hybrid Intelligence | Secnap">
   <meta property="og:description" content="20+ Years of helping growing businesses successfully fight cyberattacks.">
-  <meta property="og:image" content="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67581d6e80e970fe1f91316e_Frame%201000003739%20(2).jpg">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Expert-Driven Hybrid Intelligence | Secnap">
-  <meta name="twitter:description" content="20+ Years of helping growing businesses successfully fight cyberattacks.">
-  <meta name="twitter:image" content="https://cdn.prod.website-files.com/6757f9c28ff2440e724186f2/67581d6e80e970fe1f91316e_Frame%201000003739%20(2).jpg">
 
   <!-- Favicons -->
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
-  <link href="https://www.secnap.com" rel="canonical">
 
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,293 +24,203 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Cookie Consent -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --orange: #FF3B0A;
-      --purple: #8B5CF6;
+      --purple-gradient-start: #8B5CF6;
+      --purple-gradient-end: #FF0A8D;
       --black: #000000;
+      --dark-bg: #0a0a0a;
       --white: #FFFFFF;
-      --text-black: #333333;
       --text-light: #CCCCCC;
-      --border-white: rgba(255, 255, 255, 0.15);
-      --border-black: rgba(0, 0, 0, 0.15);
-      --hover-orange: #FF5522;
-      --hover-light-orange: #FF8866;
-      --hover-white: #F5F5F5;
     }
 
-    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background-color: var(--black);
       color: var(--white);
-      font-size: 16px;
-      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* Fluid Typography */
-    @media screen and (min-width: 2900px) {
-      html { font-size: calc(0.625rem + 0.41666666666666663vw); }
-    }
-    @media screen and (max-width: 2899px) {
-      html { font-size: calc(0.625rem + 0.41666666666666674vw); }
-    }
-    @media screen and (max-width: 1920px) {
-      html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); }
-    }
-    @media screen and (max-width: 1440px) {
-      html { font-size: calc(0.5872384937238494rem + 0.41841004184100417vw); }
-    }
-    @media screen and (max-width: 991px) {
-      html { font-size: 16px; }
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-    h2 { font-size: clamp(2rem, 4vw, 3rem); }
-    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-    h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
-
-    .text-light { color: var(--text-light); }
-
-    /* Navbar Styles */
+    /* Navbar */
     .navbar-custom {
-      background-color: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-white);
-      transition: all 0.3s ease;
-    }
-
-    .navbar-scrolled {
       background-color: rgba(0, 0, 0, 0.98);
-      box-shadow: 0 2px 20px rgba(255, 59, 10, 0.1);
-    }
-
-    .navbar-top {
-      background-color: rgba(0, 0, 0, 0.8);
-      border-bottom: 1px solid var(--border-white);
-      padding: 0.5rem 0;
-      font-size: 0.875rem;
-    }
-
-    .navbar-top a {
-      color: var(--white);
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.3s ease, color 0.3s ease;
-    }
-
-    .navbar-top a:hover {
-      opacity: 1;
-      color: var(--hover-light-orange);
-    }
-
-    .nav-link-custom {
-      color: var(--white) !important;
-      opacity: 0.7;
-      transition: opacity 0.3s ease, color 0.3s ease;
-      padding: 0.5rem 1rem !important;
-      font-weight: 500;
-    }
-
-    .nav-link-custom:hover {
-      opacity: 1;
-      color: var(--hover-light-orange) !important;
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
     }
 
     .navbar-brand img {
       height: 32px;
     }
 
-    /* Buttons */
+    .nav-link {
+      color: var(--white) !important;
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+    }
+
     .btn-orange {
       background-color: var(--orange);
       color: var(--white);
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.625rem 1.5rem;
       font-weight: 600;
-      border-radius: 0.5rem;
+      border-radius: 0.375rem;
       transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .btn-orange:hover {
-      background-color: var(--hover-orange);
+      background-color: #FF5522;
       color: var(--white);
       transform: translateY(-2px);
     }
 
-    .btn-white {
+    .btn-white-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+      padding: 0.625rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-white-outline:hover {
       background-color: var(--white);
       color: var(--black);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-white:hover {
-      background-color: var(--hover-white);
-      color: var(--black);
-      transform: translateY(-2px);
-    }
-
-    .btn-transparent {
-      background-color: transparent;
-      color: var(--orange);
-      border: 1px solid var(--orange);
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-transparent:hover {
-      border-color: var(--hover-orange);
-      color: var(--hover-orange);
-      transform: translateY(-2px);
     }
 
     /* Hero Section */
     .hero-section {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(20,20,20,1) 100%);
+      background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+      min-height: 85vh;
       position: relative;
       overflow: hidden;
-      padding: 6rem 0;
+      padding: 6rem 0 4rem;
     }
 
     .hero-section::before {
       content: '';
       position: absolute;
-      top: -50%;
+      top: -30%;
       right: -20%;
-      width: 100%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,59,10,0.1) 0%, transparent 70%);
+      width: 80%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title span {
+      color: var(--orange);
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
     }
 
     .hero-badges {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
+      align-items: center;
       flex-wrap: wrap;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .hero-badge {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      font-weight: 500;
+    .hero-badge img {
+      max-height: 80px;
+      width: auto;
     }
 
-    /* Tag/Label */
-    .tag {
+    /* Section Styles */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-dark {
+      background-color: var(--black);
+    }
+
+    .section-gradient {
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 100%);
+    }
+
+    .section-white {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .section-white h2,
+    .section-white h3,
+    .section-white h4 {
+      color: var(--black);
+    }
+
+    .section-white p {
+      color: #666;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-tag {
       color: var(--orange);
       font-size: 0.875rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      display: inline-block;
       margin-bottom: 1rem;
+      display: inline-block;
     }
 
-    /* Section Styles */
-    section {
-      padding: 6rem 0;
-      position: relative;
-    }
-
-    .bg-white {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .bg-white p {
-      color: var(--text-black);
-    }
-
-    .bg-white .tag {
-      color: var(--orange);
-    }
-
-    /* Stats/Facts Grid */
-    .facts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-
-    .facts-block {
-      text-align: center;
-    }
-
-    .facts-block div:first-child {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 0.5rem;
-    }
-
-    .facts-soc-badge {
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-    }
-
-    .facts-soc-badge img {
-      max-height: 100%;
-      width: auto;
-    }
-
-    /* Card Styles */
-    .card-custom {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-white);
+    /* Feature Cards */
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 1rem;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
+      height: 100%;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      height: 100%;
     }
 
-    .card-custom::after {
+    .feature-card::after {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(45deg, var(--purple), rgba(255, 10, 141, 0.32) 40%, var(--orange));
+      background: linear-gradient(135deg, var(--purple-gradient-start), rgba(255, 10, 141, 0.32), var(--orange));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -324,207 +228,233 @@
       transition: opacity 0.3s ease;
     }
 
-    .card-custom:hover::after {
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .feature-card:hover::after {
       opacity: 1;
     }
 
-    .card-custom:hover {
-      transform: translateY(-5px);
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .card-custom .icon-holder {
+    .feature-icon {
       width: 80px;
       height: 80px;
       margin-bottom: 1.5rem;
     }
 
-    .card-custom .icon-holder img {
+    .feature-icon img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
 
-    /* Arrow Button */
-    .arrow-button {
+    /* Stats Section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 4rem;
+      font-weight: 800;
       color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .soc-badge {
+      max-height: 80px;
+      margin: 0 auto 1rem;
+    }
+
+    /* Why Choose Icons */
+    .why-icon-block {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .why-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .why-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background-color: var(--orange);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      color: var(--white);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .btn-white-solid {
+      background-color: var(--white);
+      color: var(--orange);
+      border: none;
+      padding: 0.875rem 2rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
     }
 
-    .arrow-button:hover {
+    .btn-white-solid:hover {
+      background-color: #f0f0f0;
       color: var(--orange);
-      gap: 1rem;
+      transform: translateY(-2px);
     }
 
-    .arrow-button i {
-      transition: transform 0.3s ease;
-    }
-
-    .arrow-button:hover i {
-      transform: translateX(0.25rem);
-    }
-
-    /* CloudJacket Logo Section */
+    /* CloudJacket Section */
     .cloudjacket-logo {
-      max-width: 400px;
-      margin: 2rem auto;
+      max-width: 350px;
+      margin-bottom: 2rem;
     }
 
     .cloudjacket-icon {
-      max-width: 100px;
-      margin: 1rem auto;
+      max-width: 200px;
+      margin: 0 auto;
     }
 
-    /* Carousel/Process Section */
-    .process-carousel {
+    /* Process Flow */
+    .process-flow {
       display: flex;
-      gap: 2rem;
       align-items: center;
       justify-content: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      padding: 3rem 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       text-transform: lowercase;
+      padding: 3rem 0;
     }
 
-    .process-carousel a {
-      color: var(--text-black);
-      text-decoration: none;
-      position: relative;
+    .process-flow span {
+      color: #666;
+    }
+
+    .process-flow-arrow {
+      color: #999;
+      font-size: 2rem;
+    }
+
+    /* Service Cards Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
       transition: all 0.3s ease;
     }
 
-    .process-carousel a:hover {
-      background: linear-gradient(45deg, var(--orange), rgba(255, 10, 141, 0.5), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-5px);
     }
 
-    .process-icon {
-      width: 45px;
-      height: 68px;
-      opacity: 0.5;
+    .service-card h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .service-card a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-card a:hover {
+      gap: 0.75rem;
     }
 
     /* Footer */
     .footer {
-      background-color: #0a0a0a;
-      border-top: 1px solid var(--border-white);
+      background-color: #000;
       padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer h5 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: var(--white);
     }
 
     .footer a {
-      color: var(--white);
+      color: var(--text-light);
       text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     .footer a:hover {
-      opacity: 1;
+      color: var(--white);
     }
 
-    .footer-title {
-      font-weight: 600;
-      margin-bottom: 1rem;
-      opacity: 1;
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 3rem;
     }
-
-    /* Divider */
-    .divider {
-      height: 1px;
-      background-color: var(--border-white);
-      opacity: 0.15;
-    }
-
-    /* Animations */
-    @keyframes typedCursor {
-      30%, 70% { opacity: 1; }
-      40%, 60% { opacity: 0; }
-    }
-
-    .typed-cursor::after {
-      content: '';
-      display: inline-block;
-      width: 0.25em;
-      height: 1em;
-      margin-left: 0.5rem;
-      background-color: var(--orange);
-      animation: typedCursor 1.125s ease infinite;
-    }
-
-    /* Spacing Utilities */
-    .margin-xs { margin: 1rem 0; }
-    .margin-s { margin: 1.5rem 0; }
-    .margin-m { margin: 2rem 0; }
-    .margin-l { margin: 3rem 0; }
-    .margin-xl { margin: 4rem 0; }
-    .margin-xxl { margin: 5rem 0; }
-    .margin-3xl { margin: 6rem 0; }
 
     /* Responsive */
     @media (max-width: 768px) {
       .hero-section {
+        padding: 4rem 0 3rem;
         min-height: auto;
-        padding: 4rem 0;
       }
 
       section {
         padding: 3rem 0;
       }
 
-      .facts-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+      .process-flow {
+        font-size: 1.75rem;
       }
 
-      .process-carousel {
-        font-size: 1.5rem;
+      .stat-number {
+        font-size: 3rem;
       }
-    }
-
-    /* Search Form */
-    .search-form {
-      position: relative;
-    }
-
-    .search-form input {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid var(--border-white);
-      color: var(--white);
-      padding: 0.5rem 2.5rem 0.5rem 1rem;
-      border-radius: 0.5rem;
-      width: 200px;
-      transition: all 0.3s ease;
-    }
-
-    .search-form input::placeholder {
-      color: var(--text-light);
-    }
-
-    .search-form input:focus {
-      outline: none;
-      border-color: var(--orange);
-      width: 300px;
-      background-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .search-form button {
-      position: absolute;
-      right: 0.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: var(--white);
-      cursor: pointer;
     }
   </style>
 
@@ -534,56 +464,18 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TFS4J6SN');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Hotjar Tracking Code -->
-  <script>
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:6524926,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
 </head>
 <body>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFS4J6SN"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Top Navbar -->
-  <div class="navbar-top d-none d-lg-block">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex gap-4">
-          <a href="experienced-a-breach.html" class="d-flex align-items-center gap-2">
-            <i class="bi bi-headset"></i>
-            <span class="text-uppercase small">EXPERIENCED A BREACH?</span>
-          </a>
-          <a href="partner.html" class="d-flex align-items-center gap-2">
-            <i class="bi bi-hand-thumbs-up"></i>
-            <span class="text-uppercase small">PARTNER WITH SECNAP</span>
-          </a>
-        </div>
-        <div class="d-flex gap-4 align-items-center">
-          <span class="d-flex align-items-center gap-2">
-            <i class="bi bi-telephone"></i>
-            <span>+1.844.638.7328</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="126" viewBox="0 0 126 32" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" viewBox="0 0 126 32" fill="none">
           <path d="M110.76 29.3333V8.20012H114.322V10.7417H114.532C114.719 10.3681 114.983 9.97123 115.323 9.55097C115.663 9.12404 116.123 8.76047 116.704 8.46029C117.284 8.15343 118.024 8 118.925 8C120.112 8 121.183 8.30352 122.137 8.91057C123.098 9.51094 123.858 10.4015 124.418 11.5822C124.986 12.7563 125.269 14.1972 125.269 15.9049C125.269 17.5927 124.992 19.0269 124.438 20.2076C123.885 21.3884 123.131 22.2889 122.177 22.9093C121.223 23.5297 120.142 23.8399 118.935 23.8399C118.055 23.8399 117.324 23.6931 116.744 23.3996C116.163 23.1061 115.696 22.7526 115.343 22.339C114.996 21.9187 114.726 21.5218 114.532 21.1482H114.382V29.3333H110.76ZM114.312 15.8849C114.312 16.8789 114.452 17.7494 114.732 18.4966C115.019 19.2437 115.43 19.8274 115.963 20.2477C116.504 20.6612 117.157 20.868 117.924 20.868C118.725 20.868 119.395 20.6546 119.936 20.2276C120.476 19.794 120.883 19.2037 121.156 18.4565C121.437 17.7027 121.577 16.8455 121.577 15.8849C121.577 14.931 121.44 14.0838 121.166 13.3433C120.893 12.6029 120.486 12.0225 119.946 11.6023C119.405 11.182 118.732 10.9719 117.924 10.9719C117.151 10.9719 116.494 11.1753 115.953 11.5822C115.413 11.9892 115.003 12.5595 114.722 13.2933C114.449 14.0271 114.312 14.891 114.312 15.8849Z" fill="currentColor"/>
           <path d="M99.5668 23.8799C98.5928 23.8799 97.7156 23.7065 96.9351 23.3596C96.1613 23.006 95.5476 22.4857 95.094 21.7986C94.647 21.1115 94.4236 20.2643 94.4236 19.257C94.4236 18.3898 94.5837 17.6727 94.9039 17.1057C95.2241 16.5387 95.661 16.0851 96.2147 15.7448C96.7684 15.4046 97.3921 15.1478 98.0858 14.9744C98.7863 14.7942 99.5101 14.6642 100.257 14.5841C101.158 14.4907 101.888 14.4073 102.449 14.334C103.009 14.2539 103.416 14.1338 103.669 13.9737C103.929 13.807 104.06 13.5501 104.06 13.2033V13.1432C104.06 12.3894 103.836 11.8057 103.389 11.3921C102.942 10.9785 102.298 10.7717 101.458 10.7717C100.571 10.7717 99.867 10.9652 99.3466 11.3521C98.833 11.739 98.4861 12.196 98.306 12.723L94.9239 12.2427C95.1907 11.3087 95.631 10.5282 96.2447 9.90119C96.8584 9.26746 97.6089 8.79383 98.4961 8.4803C99.3833 8.1601 100.364 8 101.438 8C102.178 8 102.916 8.08672 103.649 8.26016C104.383 8.4336 105.054 8.72045 105.661 9.1207C106.268 9.51428 106.755 10.0513 107.121 10.7317C107.495 11.4121 107.682 12.2627 107.682 13.2833V23.5697H104.2V21.4584H104.08C103.859 21.8853 103.549 22.2856 103.149 22.6592C102.755 23.0261 102.258 23.3229 101.658 23.5497C101.064 23.7699 100.367 23.8799 99.5668 23.8799ZM100.507 21.2183C101.234 21.2183 101.865 21.0748 102.399 20.788C102.932 20.4945 103.342 20.1076 103.629 19.6273C103.923 19.147 104.07 18.6233 104.07 18.0563V16.2452C103.956 16.3385 103.763 16.4253 103.489 16.5053C103.222 16.5854 102.922 16.6554 102.589 16.7154C102.255 16.7755 101.925 16.8289 101.598 16.8755C101.271 16.9222 100.988 16.9623 100.748 16.9956C100.207 17.069 99.7235 17.1891 99.2966 17.3558C98.8697 17.5226 98.5328 17.7561 98.286 18.0563C98.0391 18.3498 97.9157 18.73 97.9157 19.197C97.9157 19.8641 98.1592 20.3677 98.6462 20.7079C99.1332 21.0482 99.7536 21.2183 100.507 21.2183Z" fill="currentColor"/>
           <path d="M82.1592 14.5641V23.5697H78.5369V8.20012H81.9991V10.8118H82.1792C82.5327 9.95122 83.0964 9.26746 83.8703 8.76048C84.6507 8.25349 85.6147 8 86.7621 8C87.8227 8 88.7466 8.22681 89.5338 8.68042C90.3276 9.13404 90.9413 9.79112 91.3749 10.6517C91.8152 11.5122 92.032 12.5562 92.0253 13.7836V23.5697H88.4031V14.344C88.4031 13.3167 88.1362 12.5128 87.6026 11.9325C87.0756 11.3521 86.3451 11.0619 85.4112 11.0619C84.7775 11.0619 84.2138 11.202 83.7202 11.4822C83.2332 11.7557 82.8496 12.1526 82.5694 12.6729C82.2959 13.1932 82.1592 13.8236 82.1592 14.5641Z" fill="currentColor"/>
@@ -598,58 +490,19 @@
           <path d="M2.09001 25.7446C3.24429 25.7446 4.18001 24.8089 4.18001 23.6546C4.18001 22.5003 3.24429 21.5646 2.09001 21.5646C0.935728 21.5646 0 22.5003 0 23.6546C0 24.8089 0.935728 25.7446 2.09001 25.7446Z" fill="#818181"/>
         </svg>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Solutions
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="cloudjacket.html">Managed Detection & Response (MDR)</a></li>
-              <li><a class="dropdown-item" href="/other-solutions#extended">Extended Detection & Response (XDR)</a></li>
-              <li><a class="dropdown-item" href="/other-solutions#ndr">Network Detection & Response (NDR)</a></li>
-              <li><a class="dropdown-item" href="/other-solutions#siem">Security Information & Event Management (SIEM)</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Services
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="services.html">Services Overview</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-custom" href="pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-custom" href="why-secnap.html">Why Secnap</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Resources
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="resources.html">White Papers</a></li>
-            </ul>
-          </li>
+        <ul class="navbar-nav ms-auto me-4">
+          <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
         </ul>
-        <div class="d-flex gap-2 align-items-center">
-          <form class="search-form d-none d-lg-block" action="/search">
-            <input type="search" name="query" placeholder="Search…" required>
-            <button type="submit"><i class="bi bi-search"></i></button>
-          </form>
-          <a href="https://www.secnap.com/pricing#pricing-calculator" class="btn-orange d-none d-xl-inline-flex">
-            Get a Custom Quote
-            <i class="bi bi-chevron-right"></i>
-          </a>
-          <a href="contact.html" class="btn-white d-none d-lg-inline-flex">
-            Contact us
-            <i class="bi bi-chevron-right"></i>
-          </a>
+        <div class="d-flex gap-2">
+          <a href="pricing.html" class="btn-orange">Get a Custom Quote</a>
+          <a href="contact.html" class="btn-white-outline d-none d-lg-inline-block">Contact us</a>
         </div>
       </div>
     </div>
@@ -658,350 +511,349 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 mx-auto text-center">
-          <h1 class="display-1 fw-bold mb-4">
-            Expert-Driven <br>Hybrid Intelligence
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="hero-title">
+            <span>&gt;</span> Expert-Driven<br>
+            Hybrid Intelligence |
           </h1>
-          <p class="lead text-light mb-4">
-            20+ Years of helping growing businesses successfully fight cyberattacks with advanced threat detection and expert security monitoring.
+          <p class="hero-subtitle">
+            20+ years of empowering businesses to stay secure in the face of evolving threats.
           </p>
-          <div class="hero-badges justify-content-center">
-            <span class="hero-badge">
-              <i class="bi bi-shield-check me-2"></i>
-              SOC2 TYPE II Certified
-            </span>
-            <span class="hero-badge">
-              <i class="bi bi-people me-2"></i>
-              300+ Businesses Protected
-            </span>
-            <span class="hero-badge">
-              <i class="bi bi-trophy me-2"></i>
-              98% Retention Rate
-            </span>
-          </div>
-          <div class="mt-5">
-            <a href="services.html" class="btn-orange btn-lg me-3">
-              Explore our services
-              <i class="bi bi-chevron-right"></i>
-            </a>
-            <a href="pricing.html" class="btn-transparent btn-lg">
-              Get Pricing
-              <i class="bi bi-chevron-right"></i>
-            </a>
+          <p style="color: var(--text-light); margin-bottom: 2rem;">
+            Protect your business with 24/7 monitoring, proactive threat hunting, and expert-driven solutions tailored for growing organizations.
+          </p>
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <img src="images/GSA-Advantage_Color_only_2020.png" alt="GSA Advantage">
+            </div>
+            <div class="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="120" viewBox="0 0 191 80" fill="none">
+                <g clip-path="url(#clip0)">
+                  <path d="M62.7803 5.05827C56.1436 1.43495 48.6458 -0.215277 41.1122 0.25109C33.5785 0.753332 26.3319 3.37217 20.2333 7.8206C14.027 12.3049 9.25568 18.4753 6.49335 25.6143C5.05837 29.3094 4.16151 33.1838 3.87451 37.13H13.7759C14.4575 29.7758 17.8297 22.9237 23.2467 17.9013C28.6638 12.8789 35.731 10.0089 43.1211 9.90132C50.6907 9.75782 58.0449 12.4843 63.7131 17.5426C69.3454 22.6009 72.8969 29.5964 73.6144 37.13H83.4799C82.8342 26.3318 76.7714 12.7354 62.7803 5.05827Z" fill="#2175BB"/>
+                  <path d="M44.269 69.9194C37.8833 70.0988 31.5694 68.1616 26.4035 64.4306C19.5873 59.5517 15.4977 52.9508 14.0268 44.6997H4.05371C6.13443 64.3589 23.677 81.3275 46.2062 79.9284C66.9775 78.6728 81.6501 62.0271 83.3362 44.6997H73.3631C72.251 51.6593 68.6994 57.9732 63.39 62.5652C58.0806 67.193 51.3003 69.7759 44.269 69.9194Z" fill="white"/>
+                  <path d="M87.6051 44.1973V37.6323H-0.0361328V44.1973H87.6051Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0">
+                    <rect width="190.493" height="80" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Comprehensive Cybersecurity Features -->
-  <section>
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="tag">COMPREHENSIVE CYBERSECURITY</span>
-        <h2 class="mt-3">Protecting Your Business With<br>Advanced Security Solutions</h2>
-      </div>
-      <div class="row g-4">
+  <!-- Comprehensive Cybersecurity Section -->
+  <section class="section-dark">
+    <div class="container text-center">
+      <span class="section-tag">OUR APPROACH</span>
+      <h2 class="section-title mb-5">Comprehensive Cybersecurity</h2>
+      <div class="row g-4 mt-4">
         <div class="col-md-4">
-          <div class="card-custom text-center">
-            <div class="icon-holder mx-auto">
-              <img src="images/Home-AI-Powered2x_1.png" alt="AI-Powered" loading="lazy">
+          <div class="feature-card">
+            <div class="feature-icon mx-auto">
+              <img src="images/Home-AI-Powered2x_1.png" alt="AI-Powered">
             </div>
-            <h4>AI-Powered Detection</h4>
-            <p class="text-light mb-3">Advanced machine learning algorithms combined with expert analysis to identify and neutralize threats in real-time.</p>
-            <a href="#" class="arrow-button">
-              Learn more
-              <i class="bi bi-chevron-right"></i>
-            </a>
+            <h4 class="mb-3">Active Defense with Threat Intelligence Engine</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Advanced security through behavioral, heuristic, and rules-based analyses, allowing our system to detect known threats and adapt to emerging ones.</p>
+            <a href="#" style="color: var(--orange); text-decoration: none; font-weight: 600;">Learn more <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card-custom text-center">
-            <div class="icon-holder mx-auto">
-              <img src="images/Home-247-Protection2x.png" alt="24/7 Protection" loading="lazy">
+          <div class="feature-card">
+            <div class="feature-icon mx-auto">
+              <img src="images/Home-247-Protection2x.png" alt="24/7 Protection">
             </div>
-            <h4>24/7 Protection</h4>
-            <p class="text-light mb-3">Round-the-clock monitoring from our US-based Security Operations Center ensures your business is always protected.</p>
-            <a href="#" class="arrow-button">
-              Learn more
-              <i class="bi bi-chevron-right"></i>
-            </a>
+            <h4 class="mb-3">24/7 Expert Protection with Proactive Monitoring</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Around-the-clock threat hunting through our US-based Security Operations Center, with high fidelity detection ensuring every alert is relevant.</p>
+            <a href="#" style="color: var(--orange); text-decoration: none; font-weight: 600;">Learn more <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card-custom text-center">
-            <div class="icon-holder mx-auto">
-              <img src="images/Home-Tailored-Security2x.png" alt="Tailored Security" loading="lazy">
+          <div class="feature-card">
+            <div class="feature-icon mx-auto">
+              <img src="images/Home-Tailored-Security2x.png" alt="Tailored Security">
             </div>
-            <h4>Tailored Security</h4>
-            <p class="text-light mb-3">Customized security solutions designed specifically for your business needs and industry requirements.</p>
-            <a href="#" class="arrow-button">
-              Learn more
-              <i class="bi bi-chevron-right"></i>
-            </a>
+            <h4 class="mb-3">Tailored Security with Best Tech Worldwide</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Customized security solutions that combine cutting-edge technology with expert analysis, designed specifically for your business needs.</p>
+            <a href="#" style="color: var(--orange); text-decoration: none; font-weight: 600;">Learn more <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Secnap - Stats -->
-  <section>
+  <!-- Stats Section -->
+  <section class="section-dark" style="padding-top: 3rem;">
     <div class="container">
-      <div class="divider mb-5"></div>
-      <div class="row">
-        <div class="col-lg-4">
-          <span class="tag typed-cursor">Why Secnap</span>
+      <h2 class="text-center mb-5" style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.4;">
+        Trusted Cybersecurity Powered by People: Protecting 300+ Businesses<br class="d-none d-md-block">
+        Worldwide Across Multiple Industries.
+      </h2>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">300+</div>
+          <p class="stat-label">Businesses protected</p>
         </div>
-        <div class="col-lg-8">
-          <h2 class="mb-5">Trusted Cybersecurity Powered by People: Protecting 300+ Businesses Worldwide Across Multiple Industries.</h2>
-          <div class="facts-grid">
-            <div class="facts-block">
-              <div>300+</div>
-              <p class="small text-light mb-0">Businesses protected</p>
+        <div>
+          <svg class="soc-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 80" fill="none">
+            <g clip-path="url(#clip1)">
+              <path d="M62.7803 5.05827C56.1436 1.43495 48.6458 -0.215277 41.1122 0.25109C33.5785 0.753332 26.3319 3.37217 20.2333 7.8206C14.027 12.3049 9.25568 18.4753 6.49335 25.6143C5.05837 29.3094 4.16151 33.1838 3.87451 37.13H13.7759C14.4575 29.7758 17.8297 22.9237 23.2467 17.9013C28.6638 12.8789 35.731 10.0089 43.1211 9.90132C50.6907 9.75782 58.0449 12.4843 63.7131 17.5426C69.3454 22.6009 72.8969 29.5964 73.6144 37.13H83.4799C82.8342 26.3318 76.7714 12.7354 62.7803 5.05827Z" fill="#2175BB"/>
+              <path d="M44.269 69.9194C37.8833 70.0988 31.5694 68.1616 26.4035 64.4306C19.5873 59.5517 15.4977 52.9508 14.0268 44.6997H4.05371C6.13443 64.3589 23.677 81.3275 46.2062 79.9284C66.9775 78.6728 81.6501 62.0271 83.3362 44.6997H73.3631C72.251 51.6593 68.6994 57.9732 63.39 62.5652C58.0806 67.193 51.3003 69.7759 44.269 69.9194Z" fill="white"/>
+              <path d="M87.6051 44.1973V37.6323H-0.0361328V44.1973H87.6051Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip1">
+                <rect width="190.493" height="80" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <p class="stat-label">SOC2 TYPE II Certified</p>
+        </div>
+        <div>
+          <div class="stat-number">80+</div>
+          <p class="stat-label">Global partners</p>
+        </div>
+        <div>
+          <div class="stat-number">98%</div>
+          <p class="stat-label">Client Retention Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="section-dark">
+    <div class="container">
+      <span class="section-tag">WHO WE ARE</span>
+      <h2 class="section-title mb-5">Cybersecurity innovator protecting your business with<br class="d-none d-md-block">expert-driven analysis 24/7</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="why-icon-block">
+            <div class="why-icon">
+              <img src="images/Home-Proven-Experience2x.png" alt="Proven Experience">
             </div>
-            <div class="facts-block">
-              <div class="facts-soc-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 191 80" fill="none">
-                  <g clip-path="url(#clip0_4016_8171)">
-                    <path d="M62.7803 5.05827C56.1436 1.43495 48.6458 -0.215277 41.1122 0.25109C33.5785 0.753332 26.3319 3.37217 20.2333 7.8206C14.027 12.3049 9.25568 18.4753 6.49335 25.6143C5.05837 29.3094 4.16151 33.1838 3.87451 37.13H13.7759C14.4575 29.7758 17.8297 22.9237 23.2467 17.9013C28.6638 12.8789 35.731 10.0089 43.1211 9.90132C50.6907 9.75782 58.0449 12.4843 63.7131 17.5426C69.3454 22.6009 72.8969 29.5964 73.6144 37.13H83.4799C82.8342 26.3318 76.7714 12.7354 62.7803 5.05827Z" fill="#2175BB"/>
-                    <path d="M44.269 69.9194C37.8833 70.0988 31.5694 68.1616 26.4035 64.4306C19.5873 59.5517 15.4977 52.9508 14.0268 44.6997H4.05371C6.13443 64.3589 23.677 81.3275 46.2062 79.9284C66.9775 78.6728 81.6501 62.0271 83.3362 44.6997H73.3631C72.251 51.6593 68.6994 57.9732 63.39 62.5652C58.0806 67.193 51.3003 69.7759 44.269 69.9194Z" fill="white"/>
-                    <path d="M87.6051 44.1973V37.6323H-0.0361328V44.1973H87.6051Z" fill="white"/>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_4016_8171">
-                      <rect width="190.493" height="80" fill="white"/>
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <p class="small text-light mb-0">SOC2 TYPE II Certified</p>
+            <h5 style="font-weight: 700; margin-bottom: 1rem;">Proven Experience</h5>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Over two decades of cybersecurity expertise, with a proven track record of protecting businesses from emerging threats through cutting-edge R&D and innovation</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-icon-block">
+            <div class="why-icon">
+              <img src="images/Home-US-Based2x.png" alt="US-Based Operations">
             </div>
-            <div class="facts-block">
-              <div>80+</div>
-              <p class="small text-light mb-0">Global partners</p>
+            <h5 style="font-weight: 700; margin-bottom: 1rem;">US-Based Operations</h5>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Our expert analysts and engineers work 24/7 from US-based security operations centers, providing continuous monitoring and rapid response to threats</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-icon-block">
+            <div class="why-icon">
+              <img src="images/Home-Expert-Driven-Protection2x.png" alt="Expert-Driven Protection">
             </div>
-            <div class="facts-block">
-              <div>98%</div>
-              <p class="small text-light mb-0">Client Retention Rate</p>
+            <h5 style="font-weight: 700; margin-bottom: 1rem;">Expert-Driven Protection</h5>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Our seasoned cybersecurity experts fine-tune threat detection to reduce noise with precision that automated solutions can't match.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-icon-block">
+            <div class="why-icon">
+              <img src="images/Home-Partnership2x.png" alt="True Partnership">
             </div>
+            <h5 style="font-weight: 700; margin-bottom: 1rem;">True Partnership</h5>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Work directly with our expert team who serve as a seamless extension of your IT department without the delays of layered support bottlenecks.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Who We Are -->
-  <section>
+  <!-- CTA Banner -->
+  <section class="cta-banner">
     <div class="container">
-      <div class="divider mb-5"></div>
-      <div class="row">
-        <div class="col-lg-4">
-          <span class="tag typed-cursor">WHO WE ARE</span>
-        </div>
-        <div class="col-lg-8">
-          <h2 class="mb-5">Cybersecurity innovator protecting your business with expert-driven analysis 24/7</h2>
-          <div class="row g-4 mb-5">
-            <div class="col-md-6">
-              <div class="d-flex gap-3">
-                <div class="icon-holder" style="width: 64px; height: 64px;">
-                  <img src="images/Home-Proven-Experience2x.png" alt="Proven Experience" loading="lazy">
-                </div>
-                <div>
-                  <h5 class="mb-2">Proven Experience</h5>
-                  <p class="text-light small mb-0">Over two decades of cybersecurity expertise, with a proven track record of protecting businesses from emerging threats through cutting-edge R&D and innovation</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="d-flex gap-3">
-                <div class="icon-holder" style="width: 64px; height: 64px;">
-                  <img src="images/Home-US-Based2x.png" alt="US-Based Operations" loading="lazy">
-                </div>
-                <div>
-                  <h5 class="mb-2">US-Based Operations</h5>
-                  <p class="text-light small mb-0">Our expert analysts and engineers work 24/7 from US-based security operations centers, providing continuous monitoring and rapid response to threats</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="d-flex gap-3">
-                <div class="icon-holder" style="width: 64px; height: 64px;">
-                  <img src="images/Home-Expert-Driven-Protection2x.png" alt="Expert-Driven Protection" loading="lazy">
-                </div>
-                <div>
-                  <h5 class="mb-2">Expert-Driven Protection</h5>
-                  <p class="text-light small mb-0">Our seasoned cybersecurity experts fine-tune threat detection to reduce noise with precision that automated solutions can't match.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="d-flex gap-3">
-                <div class="icon-holder" style="width: 64px; height: 64px;">
-                  <img src="images/Home-Partnership2x.png" alt="True Partnership" loading="lazy">
-                </div>
-                <div>
-                  <h5 class="mb-2">True Partnership</h5>
-                  <p class="text-light small mb-0">Work directly with our expert team who serve as a seamless extension of your IT department without the delays of layered support bottlenecks.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="why-secnap.html" class="arrow-button">
-            Read more about Secnap
-            <i class="bi bi-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="text-center">
-    <div class="container">
-      <h2 class="mb-4">Learn how Secnap can help your organization stay secure</h2>
-      <a href="services.html" class="btn-white btn-lg">
-        Explore our services
-        <i class="bi bi-chevron-right"></i>
-      </a>
+      <h2>Learn how Secnap can help your<br class="d-none d-md-block">organization stay secure</h2>
+      <a href="contact.html" class="btn-white-solid">Contact us</a>
     </div>
   </section>
 
   <!-- CloudJacket Section -->
-  <section class="bg-white text-center">
+  <section class="section-white text-center">
     <div class="container">
-      <span class="tag typed-cursor">Expert-Driven Hybrid Intelligence</span>
-      <div class="cloudjacket-logo">
-        <img src="images/logo2x.webp" alt="CloudJacket Logo" class="img-fluid" loading="lazy">
+      <span class="section-tag">EXPERT-DRIVEN HYBRID INTELLIGENCE</span>
+      <div class="cloudjacket-logo mx-auto my-4">
+        <img src="images/logo2x.webp" alt="CloudJacket" class="img-fluid">
       </div>
-      <div class="cloudjacket-icon">
-        <img src="images/cloudjacket-icon2x.png" alt="CloudJacket Icon" class="img-fluid" loading="lazy">
+      <div class="cloudjacket-icon my-4">
+        <img src="images/cloudjacket-icon2x.png" alt="CloudJacket Icon" class="img-fluid">
       </div>
       <div class="mx-auto" style="max-width: 600px;">
-        <p class="lead"><strong>Where Threat Intelligence Meets Human Expertise</strong></p>
-        <p>CloudJacket MDR is a complete solution with a 24/7 AI-assisted SOC and security expertise to protect your organization from cyber threats, delivering enterprise-grade protection without the complexity.</p>
+        <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem;">Where Threat Intelligence Meets Human Expertise</h3>
+        <p style="color: #666; margin-bottom: 2rem;">CloudJacket MDR is a complete solution with a 24/7 AI-assisted SOC and security expertise to protect your organization from cyber threats, delivering enterprise-grade protection without the complexity.</p>
+        <a href="cloudjacket.html" style="color: var(--orange); text-decoration: none; font-weight: 600; font-size: 1.1rem;">Learn more <i class="bi bi-arrow-right"></i></a>
       </div>
-      <a href="cloudjacket.html" class="arrow-button" style="color: var(--orange);">
-        Learn more
-        <i class="bi bi-chevron-right"></i>
-      </a>
     </div>
   </section>
 
-  <!-- Security Methodology Process -->
-  <section class="bg-white">
+  <!-- Process Flow -->
+  <section class="section-white">
     <div class="container">
-      <div class="process-carousel">
-        <a href="/cloudjacket-solution#prepare">prepare</a>
-        <svg class="process-icon" viewBox="0 0 45 68" fill="none">
-          <path d="M45.3313 38.9085L0.0585938 60.8631V50.4313L33.4677 35.2267L33.1268 35.8063V34.3404L33.4677 34.954L0.0585938 19.7154V9.31763L45.3313 31.2722V38.9085Z" fill="#CCCCCC"/>
-        </svg>
-        <a href="/cloudjacket-solution#detect">detect</a>
-        <svg class="process-icon" viewBox="0 0 45 68" fill="none">
-          <path d="M45.3313 38.9085L0.0585938 60.8631V50.4313L33.4677 35.2267L33.1268 35.8063V34.3404L33.4677 34.954L0.0585938 19.7154V9.31763L45.3313 31.2722V38.9085Z" fill="#CCCCCC"/>
-        </svg>
-        <a href="/cloudjacket-solution#respond">respond</a>
-        <svg class="process-icon" viewBox="0 0 45 68" fill="none">
-          <path d="M45.3313 38.9085L0.0585938 60.8631V50.4313L33.4677 35.2267L33.1268 35.8063V34.3404L33.4677 34.954L0.0585938 19.7154V9.31763L45.3313 31.2722V38.9085Z" fill="#CCCCCC"/>
-        </svg>
-        <a href="/cloudjacket-solution#investigate">investigate</a>
-        <svg class="process-icon" viewBox="0 0 45 68" fill="none">
-          <path d="M45.3313 38.9085L0.0585938 60.8631V50.4313L33.4677 35.2267L33.1268 35.8063V34.3404L33.4677 34.954L0.0585938 19.7154V9.31763L45.3313 31.2722V38.9085Z" fill="#CCCCCC"/>
-        </svg>
-        <a href="/cloudjacket-solution#resolve">resolve</a>
+      <div class="process-flow">
+        <span>investigate</span>
+        <span class="process-flow-arrow">&gt;</span>
+        <span>resolve</span>
+        <span class="process-flow-arrow">&gt;</span>
+        <span>prepare</span>
+        <span class="process-flow-arrow">&gt;</span>
+        <span>detect</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intelligent Security Operations -->
+  <section class="section-white" style="padding-top: 2rem;">
+    <div class="container text-center">
+      <span class="section-tag">OUR PROCESS</span>
+      <h2 class="section-title mb-3" style="color: var(--black);">Intelligent Security Operations</h2>
+      <p style="color: #666; max-width: 700px; margin: 0 auto 3rem;">Secnap's comprehensive security methodology combines advanced threat intelligence<br class="d-none d-md-block">with expert-driven analysis through a proven five-stage process.</p>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card" style="background: #f8f9fa; border-color: #e0e0e0; text-align: left;">
+            <h4 style="color: var(--black);">Prepare</h4>
+            <p style="color: #666;">Easily implement Security Awareness Training (SAT), Vulnerability Scanning, and proactively monitor the dark web for compromised credentials.</p>
+            <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card" style="background: #f8f9fa; border-color: #e0e0e0; text-align: left;">
+            <h4 style="color: var(--black);">Detect</h4>
+            <p style="color: #666;">Continuous monitoring and advanced threat detection systems identify potential security incidents across your entire infrastructure.</p>
+            <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card" style="background: #f8f9fa; border-color: #e0e0e0; text-align: left;">
+            <h4 style="color: var(--black);">Respond</h4>
+            <p style="color: #666;">Rapid response protocols with expert-driven containment strategies to minimize impact and prevent escalation.</p>
+            <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card" style="background: #f8f9fa; border-color: #e0e0e0; text-align: left;">
+            <h4 style="color: var(--black);">Investigate</h4>
+            <p style="color: #666;">Our security experts leverage advanced threat intelligence insights paired with forensic analysis to investigate malicious activity.</p>
+            <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card" style="background: #f8f9fa; border-color: #e0e0e0; text-align: left;">
+            <h4 style="color: var(--black);">Resolve</h4>
+            <p style="color: #666;">Complete resolution of security incidents with detailed documentation and post-incident analysis for continuous improvement.</p>
+            <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section>
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="tag">OUR SERVICES</span>
-        <h2 class="mt-3">Comprehensive Security Services<br>Tailored to Your Needs</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card-custom">
-            <div class="icon-holder">
-              <img src="images/Home-Security-Assessment2x.png" alt="Security Assessment" loading="lazy">
-            </div>
-            <h5>Security Assessment</h5>
-            <p class="text-light small">Comprehensive evaluation of your security posture to identify vulnerabilities and recommend improvements.</p>
+  <section class="section-dark">
+    <div class="container text-center">
+      <span class="section-tag">OUR SERVICES</span>
+      <h2 class="section-title mb-5">We offer specialized assessment services and security control<br class="d-none d-md-block">solutions to protect your enterprise assets</h2>
+
+      <div class="services-grid mt-5">
+        <div class="service-card">
+          <div class="feature-icon mb-3">
+            <img src="images/Home-Security-Assessment2x.png" alt="Security Assessment">
           </div>
+          <h4>Comprehensive Security Assessments</h4>
+          <p>Internal and external vulnerability scanning, and infrastructure analysis to identify potential security gaps before they can be exploited.</p>
+          <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card-custom">
-            <div class="icon-holder">
-              <img src="images/Home-Dark-Web2x.png" alt="Dark Web Monitoring" loading="lazy">
-            </div>
-            <h5>Dark Web Monitoring</h5>
-            <p class="text-light small">Monitor the dark web for compromised credentials and potential threats to your organization.</p>
+        <div class="service-card">
+          <div class="feature-icon mb-3">
+            <img src="images/Home-Dark-Web2x.png" alt="Dark Web">
           </div>
+          <h4>Web Application & Dark Web Intelligence</h4>
+          <p>Advanced testing of web applications and continuous dark web monitoring to protect your digital assets and detect compromised credentials.</p>
+          <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card-custom">
-            <div class="icon-holder">
-              <img src="images/Home-Risk-Management2x.png" alt="Risk Management" loading="lazy">
-            </div>
-            <h5>Risk Management</h5>
-            <p class="text-light small">Proactive risk identification and mitigation strategies to protect your business assets.</p>
+        <div class="service-card">
+          <div class="feature-icon mb-3">
+            <img src="images/Home-Risk-Management2x.png" alt="Risk Management">
           </div>
+          <h4>Compliance & Risk Management</h4>
+          <p>Proactive compliance assessments and documentation to ensure regulatory adherence, minimize potential fines, and maintain strong security posture.</p>
+          <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card-custom">
-            <div class="icon-holder">
-              <img src="images/Home-Strategic-Services2x.png" alt="Strategic Services" loading="lazy">
-            </div>
-            <h5>Strategic Services</h5>
-            <p class="text-light small">Long-term security planning and strategic guidance to align security with business goals.</p>
+        <div class="service-card">
+          <div class="feature-icon mb-3">
+            <img src="images/Home-Strategic-Services2x.png" alt="Strategic Services">
           </div>
+          <h4>Strategic Security Services</h4>
+          <p>Expert-led cybersecurity consulting and training to strengthen your overall security program and enhance employee security awareness.</p>
+          <a href="#">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-banner">
+    <div class="container text-center">
+      <h2>Let our experts help you find the best<br class="d-none d-md-block">solution for your needs</h2>
+      <a href="contact.html" class="btn-white-solid">Contact us now</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="row g-4 mb-5">
-        <div class="col-md-6 col-lg-3">
-          <h6 class="footer-title">CloudJacket</h6>
+      <div class="row g-4 mb-4">
+        <div class="col-md-3">
+          <h5>CloudJacket</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="cloudjacket.html">About CloudJacket</a></li>
             <li class="mb-2"><a href="pricing.html">Pricing</a></li>
             <li class="mb-2"><a href="services.html">Services</a></li>
           </ul>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="footer-title">Resources</h6>
+        <div class="col-md-3">
+          <h5>Resources</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="resources.html">White Papers</a></li>
+            <li class="mb-2"><a href="blog.html">Blog</a></li>
           </ul>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="footer-title">Company</h6>
+        <div class="col-md-3">
+          <h5>Company</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="why-secnap.html">About Secnap</a></li>
             <li class="mb-2"><a href="partner.html">Partner with Secnap</a></li>
+            <li class="mb-2"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="footer-title">Contact</h6>
-          <a href="contact.html" class="btn-orange">
-            Contact us
-            <i class="bi bi-chevron-right"></i>
-          </a>
+        <div class="col-md-3">
+          <h5>Contact us</h5>
+          <p style="color: var(--text-light); font-size: 0.9rem;">Get in touch with our team of cybersecurity experts today.</p>
+          <a href="contact.html" class="btn-orange">Contact us</a>
         </div>
       </div>
-      <div class="divider mb-4"></div>
-      <div class="row">
-        <div class="col-md-6">
-          <p class="small text-light mb-0">&copy; 2025 Secnap Network Security Corporation. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <a href="#" class="small me-3">Privacy Policy</a>
+
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-md-6">
+            <p style="color: var(--text-light); font-size: 0.875rem;">&copy; 2025 Secnap Network Security Corporation. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="me-3" style="font-size: 0.875rem;">Privacy Policy</a>
+            <a href="#" style="font-size: 0.875rem;">Terms of Service</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1010,19 +862,16 @@
   <!-- Bootstrap 5.3 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Cookie Consent JS -->
-  <script async src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
-
-  <!-- Custom JS -->
   <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar-custom');
-      if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
-      }
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   </script>
 </body>
