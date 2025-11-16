@@ -161,24 +161,6 @@ body {
 	font-size: 0.875rem;
 }
 
-.footer {
-	background: var(--black);
-	padding: 4rem 0 2rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-link {
-	color: rgba(255, 255, 255, 0.6);
-	text-decoration: none;
-	transition: all 0.25s;
-	display: block;
-	margin-bottom: 0.75rem;
-}
-
-.footer-link:hover {
-	color: #fff;
-}
-
 .footer-cta {
 	background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(255, 59, 10, 0.2));
 	border: 1px solid rgba(255, 59, 10, 0.3);
@@ -211,6 +193,7 @@ body {
 
 .section-gradient {
 	position: relative;
+	overflow: hidden;
 }
 
 .section-gradient::before {
@@ -262,4 +245,24 @@ body {
 	background: linear-gradient(black, black) padding-box,
 		linear-gradient(45deg, var(--purple), rgb(255, 10, 141, 0.32) 40%, var(--orange));*/
 	border: 1px solid transparent;
+}
+
+/* Animations */
+@keyframes typedCursor {
+	30%, 70% { opacity: 1; }
+	40%, 60% { opacity: 0; }
+}
+
+.typed-cursor::after {
+	content: '';
+	display: inline-block;
+	width: 0.25em;
+	height: 1em;
+	margin-left: 0.5rem;
+	background-color: var(--orange);
+	animation: typedCursor 1.125s ease infinite;
+}
+
+footer a:hover {
+	color: var(--white) !important;
 }
