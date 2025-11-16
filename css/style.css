@@ -162,7 +162,7 @@ body {
 }
 
 .footer {
-	background: #000;
+	background: var(--black);
 	padding: 4rem 0 2rem;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -201,4 +201,65 @@ body {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: #6B7280;
+}
+
+/* Gradient backgrounds for sections */
+.short-divider {
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.section-gradient {
+	position: relative;
+}
+
+.section-gradient::before {
+	content: '';
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: radial-gradient(circle, rgba(255, 59, 10, 0.3) 0%, rgba(255, 10, 141, 0.2) 40%, transparent 70%);
+	filter: blur(80px);
+	pointer-events: none;
+	z-index: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	filter: blur(80px);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.section-gradient-left::before {
+	left: -250px;
+	background: radial-gradient(circle, rgba(255, 59, 10, 0.3) 0%, rgba(255, 10, 141, 0.2) 40%, transparent 70%);
+}
+
+.section-gradient-right::before {
+	right: -250px;
+	background: radial-gradient(circle, rgba(112, 118, 255, 0.3) 0%, rgba(255, 10, 141, 0.2) 40%, transparent 70%);
+}
+
+.section-gradient-right > *,
+.section-gradient-left > * {
+	position: relative;
+	z-index: 1;
+}
+
+.glass-card {
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(24px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 1.5rem;
+	transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+	background: linear-gradient(black, black) padding-box,
+		linear-gradient(to right, darkblue, darkorchid) border-box;
+	/* original colors to bright
+	background: linear-gradient(black, black) padding-box,
+		linear-gradient(45deg, var(--purple), rgb(255, 10, 141, 0.32) 40%, var(--orange));*/
+	border: 1px solid transparent;
 }
