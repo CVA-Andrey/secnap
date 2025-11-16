@@ -206,31 +206,43 @@
     }
 
     .section-deco-gradient {
-      position: absolute;
-      top: -30%;
-      right: -20%;
-      width: 80%;
-      height: 150%;
-      background: radial-gradient(circle, rgba(112, 118, 255, 0.15) 0%, transparent 70%);
-      transform: translate3d(0, 0, 0);
+      background-image: linear-gradient(155deg, var(--purple) 10%, #ff0a8d4d 50%, #ff2c31cc);
+      opacity: 0.8;
+      filter: blur(10rem);
+      pointer-events: none;
+      border-radius: 100%;
+      width: 28.75rem;
+      height: 28.75rem;
     }
 
     .home-hero-deco {
-      margin-bottom: 2rem;
+      float: left;
+      width: 7.625rem;
+      height: 4.875rem;
+      margin-top: 0.875rem;
+      margin-bottom: 0.875rem;
+      margin-right: 1.5rem;
+      position: relative;
     }
 
     .home-hero-deco svg {
-      width: 122px;
-      height: 78px;
+      width: 100%;
+      height: 100%;
     }
 
-    .hero-cursor-deco {
+    .home-hero-cursor-deco {
       color: var(--pseudo--init);
+      background-color: currentColor;
+      width: 0.625rem;
+      height: 4.5rem;
+      margin-left: 1.5rem;
+      display: inline-block;
+      position: relative;
     }
 
     /* Margins */
     .margin-xl {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .margin-l {
@@ -246,7 +258,7 @@
     }
 
     .margin-xs {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .margin-3xl {
@@ -258,7 +270,7 @@
     }
 
     .max-width-l {
-      max-width: 48rem;
+      max-width: 40rem;
     }
 
     .text-center {
@@ -267,20 +279,20 @@
 
     /* Tag */
     .tag {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 6.25rem;
-      padding: 0.5rem 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1em;
       display: inline-block;
     }
 
     /* Card Link - Matching original gradient border effect */
     .card-link {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 1rem;
+      -webkit-backdrop-filter: blur(1.5rem);
+      backdrop-filter: blur(1.5rem);
+      background-color: #0000004d;
+      border-radius: 1.5rem;
       padding: 2.5rem 2rem;
       height: 100%;
       display: block;
@@ -323,9 +335,11 @@
     }
 
     .icon-xxl {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1.5rem;
+      object-fit: contain;
+      flex: none;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: block;
     }
 
     .icon-xxl img {
@@ -343,8 +357,7 @@
     }
 
     .paragraph-s {
-      font-size: 1rem;
-      line-height: 1.5em;
+      font-size: 0.875rem;
     }
 
     .no-letter-spacing {
@@ -353,18 +366,24 @@
 
     /* Arrow Button */
     .arrow-button {
-      display: flex;
+      grid-column-gap: 0.25rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      justify-content: flex-start;
       align-items: center;
-      gap: 0.5rem;
-      color: var(--orange);
-      font-weight: 500;
       font-size: 0.875rem;
-      margin-top: auto;
+      font-weight: 700;
+      line-height: 1em;
+      transition: color 0.25s;
+      display: flex;
     }
 
     .arrow-button .icon-m {
-      width: 24px;
-      height: 24px;
+      object-fit: contain;
+      flex: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: block;
       transition: transform 0.25s ease;
     }
 
@@ -397,17 +416,29 @@
     /* Hero Badges */
     .hero-badges {
       display: flex;
-      gap: 2rem;
-      align-items: center;
-      margin-top: 3rem;
+      grid-column-gap: 2.25rem;
+      grid-row-gap: 2.25rem;
+    }
+
+    .gsa {
+      width: 10.75rem;
+      height: 3.25rem;
     }
 
     .gsa img {
-      max-height: 80px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .soc {
+      width: 10.75rem;
+      height: 4.75rem;
     }
 
     .soc svg {
-      max-height: 80px;
+      width: 100%;
+      height: 100%;
     }
 
     /* Column Grid System */
@@ -425,21 +456,29 @@
 
     /* Button */
     .button {
+      grid-column-gap: 0.25rem;
       background-color: var(--orange);
       color: var(--white);
-      border: none;
-      padding: 0.875rem 2rem;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      transition: background-color 0.25s ease;
-      display: inline-block;
+      border-radius: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 10rem;
+      min-height: 2.5rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1em;
+      transition: background-color 0.25s;
+      display: flex;
+      position: relative;
+      overflow: clip;
       cursor: pointer;
-      letter-spacing: -0.02em;
     }
 
     .button:hover {
       background-color: var(--hover--orange);
       color: var(--white);
+      text-decoration: none;
     }
 
     .button.white-variant {
@@ -449,9 +488,10 @@
 
     /* Line Divider */
     .line-divider {
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.15);
-      margin-bottom: 2rem;
+      background-color: currentColor;
+      width: 100%;
+      height: 0.0625rem;
+      opacity: 0.15;
     }
 
     /* Why Icons */
