@@ -266,3 +266,37 @@ body {
 footer a:hover {
 	color: var(--white) !important;
 }
+
+/* Animated cursor decoration */
+.cursor-blink {
+	width: 0.625rem;
+	height: 4.5rem;
+	background-color: var(--orange);
+	display: inline-block;
+	animation: blink 1.5s ease infinite;
+}
+
+.cursor-blink {
+	width: 0.625rem;
+	height: 4.5rem;
+	background-color: var(--orange);
+	display: inline-block;
+	animation: blink 1.5s ease infinite;
+}
+
+.underline-blink {
+	width: 0.625rem;
+	height: 4.5rem;
+	background-color: var(--orange);
+	display: inline-block;
+	animation: blink 1.5s ease infinite;
+}
+
+@keyframes blink {
+	30%, 70% {
+		opacity: 1;
+	}
+	40%, 60% {
+		opacity: 0.2;
+	}
+}
