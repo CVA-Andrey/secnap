@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expert-Driven Hybrid Intelligence | Secnap</title>
+
+	<!-- Bootstrap 5.3 CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS for brand colors and gradient styling -->
+	<style>
+		:root {
+			--secnap-orange: #ff3b0a;
+			--secnap-purple: #7076ff;
+			--secnap-pink: #ff0a8d;
+			--secnap-dark: #000000;
+		}
+
+		body {
+			background-color: #000;
+			color: #fff;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			letter-spacing: -0.02em;
+		}
+
+		/* Gradient Text */
+		.gradient-text {
+			background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.5) 50%, var(--secnap-orange));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		/* Hero gradient background */
+		.hero-gradient {
+			position: relative;
+			background: #000;
+		}
+
+		.hero-gradient::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background:
+					radial-gradient(circle at 10% 20%, rgba(255, 59, 10, 0.4) 0%, transparent 50%),
+					radial-gradient(circle at 90% 80%, rgba(255, 10, 141, 0.3) 0%, transparent 50%),
+					radial-gradient(circle at 50% 50%, rgba(112, 118, 255, 0.2) 0%, transparent 70%);
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		.hero-gradient > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Gradient backgrounds for sections */
+		.section-gradient-left {
+			position: relative;
+		}
+
+		.section-gradient-left::before {
+			content: '';
+			position: absolute;
+			width: 500px;
+			height: 500px;
+			left: -250px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: radial-gradient(circle, rgba(255, 59, 10, 0.3) 0%, rgba(255, 10, 141, 0.2) 40%, transparent 70%);
+			filter: blur(80px);
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		.section-gradient-right {
+			position: relative;
+		}
+
+		.section-gradient-right::before {
+			content: '';
+			position: absolute;
+			width: 500px;
+			height: 500px;
+			right: -250px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: radial-gradient(circle, rgba(112, 118, 255, 0.3) 0%, rgba(255, 10, 141, 0.2) 40%, transparent 70%);
+			filter: blur(80px);
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		.section-gradient-right > *,
+		.section-gradient-left > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Glass morphism cards with gradient borders */
+		.glass-card {
+			background: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(24px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 1.5rem;
+			position: relative;
+			transition: all 0.3s ease;
+			overflow: hidden;
+		}
+
+		.glass-card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 1px;
+			background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.3) 40%, var(--secnap-orange));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			pointer-events: none;
+		}
+
+		.glass-card:hover::before {
+			opacity: 1;
+		}
+
+		.glass-card:hover {
+			transform: translateY(-4px);
+		}
+
+		/* Gradient border utilities */
+		.border-gradient {
+			position: relative;
+			border: 1px solid transparent;
+			background: linear-gradient(#000, #000) padding-box,
+			linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.5) 50%, var(--secnap-orange)) border-box;
+		}
+
+		/* Navbar styling with glassmorphism */
+		.navbar {
+			backdrop-filter: blur(18px);
+			background-color: rgba(0, 0, 0, 0.3);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		/* Orange button with gradient hover */
+		.btn-orange {
+			background: var(--secnap-orange);
+			border: none;
+			color: #fff;
+			position: relative;
+			overflow: hidden;
+			transition: all 0.3s ease;
+		}
+
+		.btn-orange::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(45deg, var(--secnap-orange), var(--secnap-pink));
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.btn-orange:hover::before {
+			opacity: 1;
+		}
+
+		.btn-orange:hover {
+			color: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 10px 30px rgba(255, 59, 10, 0.3);
+		}
+
+		.btn-orange > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Typography */
+		h1 {
+			font-size: clamp(2.5rem, 6vw, 6rem);
+			font-weight: 500;
+			line-height: 1.12;
+		}
+
+		h2 {
+			font-size: clamp(1.75rem, 4vw, 3rem);
+			font-weight: 400;
+			line-height: 1.2;
+		}
+
+		/* Stats counter with gradient */
+		.stat-number {
+			font-size: clamp(3rem, 5vw, 5rem);
+			font-weight: 300;
+			background: linear-gradient(135deg, var(--secnap-orange), var(--secnap-pink), var(--secnap-purple));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		/* Animated cursor decoration */
+		.cursor-blink {
+			width: 0.625rem;
+			height: 4.5rem;
+			background-color: rgba(255, 255, 255, 0.3);
+			display: inline-block;
+			animation: blink 1.1s ease infinite;
+		}
+
+		@keyframes blink {
+			30%, 70% {
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+			40%, 60% {
+				background-color: var(--secnap-orange);
+			}
+		}
+
+		/* Tag styling */
+		.tag {
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight: 500;
+		}
+
+		/* Gradient decorative SVG */
+		.gradient-icon {
+			fill: url(#iconGradient);
+		}
+
+		/* Testimonial card with gradient on hover */
+		.testimonial-card {
+			background: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(24px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 1.5rem;
+			position: relative;
+			transition: all 0.3s ease;
+		}
+
+		.testimonial-card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 1px;
+			background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.3) 40%, var(--secnap-orange));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			pointer-events: none;
+		}
+
+		.testimonial-card:hover::before {
+			opacity: 0.5;
+		}
+
+		/* Footer CTA card with gradient */
+		.footer-cta-card {
+			background: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(24px);
+			border-radius: 1.5rem;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.footer-cta-card::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			padding: 1px;
+			background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.3) 40%, var(--secnap-orange));
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+
+		/* Gradient divider line */
+		.gradient-divider {
+			height: 1px;
+			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+		}
+
+		/* Badge with gradient */
+		.badge-gradient {
+			background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.8) 50%, var(--secnap-orange));
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			font-weight: 600;
+		}
+
+		/* Carousel scrolling animation */
+		@keyframes scroll {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-50%);
+			}
+		}
+
+		.scroll-animation {
+			animation: scroll 25s linear infinite;
+		}
+
+		/* Process step with gradient number */
+		.process-number {
+			background: linear-gradient(135deg, var(--secnap-orange), var(--secnap-pink));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-weight: 600;
+		}
+
+		/* Hover effect for links with gradient underline */
+		.link-gradient {
+			position: relative;
+			text-decoration: none;
+			background-image: linear-gradient(45deg, var(--secnap-orange), var(--secnap-pink));
+			background-size: 0 2px;
+			background-repeat: no-repeat;
+			background-position: left bottom;
+			transition: background-size 0.3s ease;
+		}
+
+		.link-gradient:hover {
+			background-size: 100% 2px;
+		}
+
+		/* Service icon with gradient */
+		.service-icon {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, rgba(255, 59, 10, 0.2), rgba(255, 10, 141, 0.2));
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+
+		.service-icon::before {
+			content: '';
+			position: absolute;
+			inset: -2px;
+			border-radius: 50%;
+			background: linear-gradient(45deg, var(--secnap-orange), var(--secnap-pink), var(--secnap-purple));
+			z-index: -1;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.service-icon:hover::before {
+			opacity: 0.5;
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			.cursor-blink {
+				height: 2rem;
+			}
+
+			.section-gradient-left::before,
+			.section-gradient-right::before {
+				width: 300px;
+				height: 300px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+<!-- SVG Gradient Definitions (reusable) -->
+<svg width="0" height="0" style="position: absolute;">
+	<defs>
+		<linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" style="stop-color:#7076ff;stop-opacity:1" />
+			<stop offset="50%" style="stop-color:#ff0a8d;stop-opacity:0.5" />
+			<stop offset="100%" style="stop-color:#ff3b0a;stop-opacity:1" />
+		</linearGradient>
+
+		<linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%" style="stop-color:#ff3b0a;stop-opacity:1" />
+			<stop offset="100%" style="stop-color:#ff0a8d;stop-opacity:1" />
+		</linearGradient>
+	</defs>
+</svg>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+	<div class="container">
+		<!-- Logo -->
+		<a class="navbar-brand fw-bold" href="#">
+			<span class="gradient-text fs-4">SECNAP</span>
+		</a>
+
+		<!-- Mobile Toggle -->
+		<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navigation Links -->
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+						Solutions
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark">
+						<li><a class="dropdown-item" href="#">Managed Detection & Response (MDR)</a></li>
+						<li><a class="dropdown-item" href="#">Extended Detection & Response (XDR)</a></li>
+						<li><a class="dropdown-item" href="#">Network Detection & Response (NDR)</a></li>
+						<li><a class="dropdown-item" href="#">SIEM</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+						Services
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark">
+						<li><a class="dropdown-item" href="#">Services Overview</a></li>
+						<li><a class="dropdown-item" href="#">Security Assessments</a></li>
+						<li><a class="dropdown-item" href="#">Compliance Support</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Why Secnap</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+						Resources
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark">
+						<li><a class="dropdown-item" href="#">Blog</a></li>
+						<li><a class="dropdown-item" href="#">White Papers</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<!-- CTA Buttons -->
+			<div class="d-flex gap-2">
+				<a href="#" class="btn btn-orange rounded-pill px-4">Get a Custom Quote</a>
+				<a href="#" class="btn btn-outline-light rounded-pill px-4">Contact us</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-gradient min-vh-100 d-flex align-items-center position-relative overflow-hidden" style="padding-top: 180px;">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-8">
+				<!-- Decorative SVG Icon with gradient -->
+				<div class="mb-4">
+					<svg width="122" height="78" viewBox="0 0 122 78" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 7.625rem; height: 4.875rem;">
+						<path d="M121.579 67.1763V78.0001H66.1387V67.1763H121.579Z" fill="currentColor" class="text-white opacity-50"/>
+						<path d="M57.0116 37.6024L0.420654 65.0456V52.0058L42.182 33.0001L41.7559 33.7246V31.8922L42.182 32.6592L0.420654 13.6109V0.61377L57.0116 28.0569V37.6024Z" fill="url(#orangeGradient)"/>
+					</svg>
+				</div>
+
+				<!-- Main Headline with gradient accent -->
+				<h1 class="mb-4">
+					<span class="d-block">Expert-Driven</span>
+					<span class="d-inline-block gradient-text">Hybrid Intelligence</span>
+					<span class="cursor-blink ms-3"></span>
+				</h1>
+
+				<!-- Subheadline -->
+				<div class="row">
+					<div class="col-lg-10">
+						<h2 class="h3 mb-3 fw-normal">
+							<span class="gradient-text">20+ years</span> of empowering businesses to stay secure in the face of evolving threats.
+						</h2>
+						<p class="lead text-white-50 mb-4">
+							Protect your business with 24/7 monitoring, proactive threat hunting, and expert-driven solutions tailored for growing organizations. Backed by unmatched technology and a dedicated US-based team, we stop attackers in their tracks.
+						</p>
+					</div>
+				</div>
+
+				<!-- Certifications Badges with gradient -->
+				<div class="d-flex gap-4 align-items-center mt-5">
+					<div class="badge-gradient text-white">
+						<strong>GSA</strong> Approved
+					</div>
+					<div class="badge-gradient text-white">
+						<strong>SOC 2</strong> Type II Certified
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Comprehensive Cybersecurity Section -->
+<section class="py-5 my-5 section-gradient-right">
+	<div class="container">
+		<!-- Section Header -->
+		<div class="text-center mb-5">
+			<div class="gradient-divider mb-5"></div>
+			<p class="tag text-white-50 mb-2">Our Approach</p>
+			<h2 class="mb-4">
+				<span class="gradient-text">Comprehensive</span> Cybersecurity
+			</h2>
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<p class="text-white-50">
+						Human expertise meets AI augmentation in our patented CloudJacket platform, delivering adaptive protection against emerging threats. Built from the ground up, CloudJacket rivals Fortune 100 defenses—at a price every business can afford.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Feature Cards with gradient borders -->
+		<div class="row g-4">
+			<div class="col-lg-4">
+				<div class="glass-card p-4 h-100 d-flex flex-column">
+					<div class="service-icon mb-3">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<circle cx="12" cy="12" r="10" stroke="url(#iconGradient)" stroke-width="2"/>
+							<path d="M12 6v6l4 2" stroke="url(#iconGradient)" stroke-width="2"/>
+						</svg>
+					</div>
+					<h3 class="h4 mb-3">Active Defense with <span class="gradient-text">Threat Intelligence Engine</span></h3>
+					<p class="text-white-50 flex-grow-1">Advanced security through behavioral, heuristic, and rules-based analyses, allowing our system to detect known threats and adapt to emerging ones.</p>
+					<a href="#" class="link-gradient text-decoration-none mt-3" style="color: #ff3b0a;">
+						Learn more <span class="ms-2">→</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="glass-card p-4 h-100 d-flex flex-column">
+					<div class="service-icon mb-3">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="url(#iconGradient)" stroke-width="2"/>
+						</svg>
+					</div>
+					<h3 class="h4 mb-3"><span class="gradient-text">24/7 Expert Protection</span> with Proactive Monitoring</h3>
+					<p class="text-white-50 flex-grow-1">Around-the-clock threat hunting through our US-based Security Operations Center, with high fidelity detection ensuring every alert is relevant.</p>
+					<a href="#" class="link-gradient text-decoration-none mt-3" style="color: #ff3b0a;">
+						Learn more <span class="ms-2">→</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="glass-card p-4 h-100 d-flex flex-column">
+					<div class="service-icon mb-3">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="url(#iconGradient)" stroke-width="2"/>
+						</svg>
+					</div>
+					<h3 class="h4 mb-3">Tailored Security with <span class="gradient-text">Real-Time Response</span></h3>
+					<p class="text-white-50 flex-grow-1">Real-time threat neutralization with automated countermeasures for system isolation and termination of ransomware processes.</p>
+					<a href="#" class="link-gradient text-decoration-none mt-3" style="color: #ff3b0a;">
+						Learn more <span class="ms-2">→</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Why Secnap Section -->
+<section class="py-5 my-5 section-gradient-left">
+	<div class="container">
+		<div class="gradient-divider mb-5"></div>
+
+		<div class="row">
+			<div class="col-lg-3 mb-4 mb-lg-0">
+				<p class="tag text-white-50 position-sticky" style="top: 10rem;">Why Secnap</p>
+			</div>
+
+			<div class="col-lg-9">
+				<h2 class="mb-5">
+					<span class="gradient-text">Trusted Cybersecurity</span> Powered by People: Protecting 300+ Businesses Worldwide Across Multiple Industries.
+				</h2>
+
+				<!-- Stats Grid with gradient numbers -->
+				<div class="row g-4 mb-5">
+					<div class="col-md-3">
+						<div class="stat-number mb-2">300+</div>
+						<p class="text-white-50 small">Businesses protected</p>
+					</div>
+					<div class="col-md-3">
+						<div class="badge-gradient text-white text-center d-block py-3">
+							SOC2<br>TYPE II
+						</div>
+						<p class="text-white-50 small mt-2">Certified</p>
+					</div>
+					<div class="col-md-3">
+						<div class="stat-number mb-2">80+</div>
+						<p class="text-white-50 small">Global partners</p>
+					</div>
+					<div class="col-md-3">
+						<div class="stat-number mb-2">98%</div>
+						<p class="text-white-50 small">Client Retention Rate</p>
+					</div>
+				</div>
+
+				<!-- Features Grid -->
+				<div class="row g-4">
+					<div class="col-md-6">
+						<div class="d-flex gap-3">
+							<div class="service-icon flex-shrink-0">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+									<path d="M10 3v14M3 10h14" stroke="url(#iconGradient)" stroke-width="2"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="h5 mb-2"><span class="gradient-text">Proven Experience</span></h3>
+								<p class="text-white-50 small">Over two decades of cybersecurity expertise, with a proven track record of protecting businesses from emerging threats through cutting-edge R&D and innovation.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="d-flex gap-3">
+							<div class="service-icon flex-shrink-0">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+									<circle cx="10" cy="10" r="8" stroke="url(#iconGradient)" stroke-width="2"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="h5 mb-2"><span class="gradient-text">US-Based Operations</span></h3>
+								<p class="text-white-50 small">Our expert analysts and engineers work 24/7 from US-based security operations centers, providing continuous monitoring and rapid response to threats.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="d-flex gap-3">
+							<div class="service-icon flex-shrink-0">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+									<path d="M5 10l3 3 7-7" stroke="url(#iconGradient)" stroke-width="2"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="h5 mb-2"><span class="gradient-text">Expert-Driven Protection</span></h3>
+								<p class="text-white-50 small">Our seasoned cybersecurity experts fine-tune threat detection to reduce noise with precision that automated solutions can't match.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="d-flex gap-3">
+							<div class="service-icon flex-shrink-0">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+									<path d="M7 10h6M10 7v6" stroke="url(#iconGradient)" stroke-width="2"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="h5 mb-2"><span class="gradient-text">True Partnership</span></h3>
+								<p class="text-white-50 small">Work directly with our expert team who serve as a seamless extension of your IT department without the delays of layered support bottlenecks.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
