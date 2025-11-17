@@ -86,6 +86,27 @@ window.onload = function () {
 		}
 	});
 	heroTl.fromTo(heroSpan1, { text: '' }, { text: heroSpan1Txt, duration: 0.5 });
-	heroTl.fromTo(heroSpan1, { display: 'inline-block' }, { display: 'block' });
+	//heroTl.fromTo(heroSpan1, { display: 'inline-block' }, { display: 'block' });
 	heroTl.fromTo(heroSpan2, { display: 'none', text: '' }, { display: 'inline-block', text: heroSpan2Txt, duration: 0.75 }, '-=0.5');
+
+	// Typed Anim
+	let typedElements = document.querySelectorAll('[typed-anim]');
+	typedElements.forEach((item) => {
+		let curTxt = item.textContent;
+		let typedTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: item,
+				start: 'top 95%',
+				end: 'top 95%'
+			}
+		});
+		typedTl.fromTo(item, {
+				text: '',
+			},
+			{
+				duration: 1.5,
+				text: curTxt,
+				ease: "none",
+			});
+	});
 }

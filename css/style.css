@@ -199,7 +199,6 @@ body {
 .section-gradient {
 	position: relative;
 	overflow: hidden;
-	min-height: 35rem;
 }
 
 .section-gradient::before {
@@ -234,6 +233,13 @@ body {
 .section-gradient-left > * {
 	position: relative;
 	z-index: 1;
+}
+
+.section-gradient-small::before {
+	right: -24rem;
+	width: 33rem;
+	height: 10rem;
+	filter: blur(2rem);
 }
 
 .glass-card {
@@ -274,13 +280,6 @@ footer a:hover {
 }
 
 /* Animated cursor decoration */
-.cursor-blink {
-	width: 0.625rem;
-	height: 4.5rem;
-	background-color: var(--orange);
-	display: inline-block;
-	animation: blink 1.5s ease infinite;
-}
 
 .cursor-blink, .underline-blink {
 	background-color: var(--orange);
@@ -290,12 +289,12 @@ footer a:hover {
 
 .cursor-blink {
 	width: 0.625rem;
-	height: 4.5rem;
+	height: 3.75rem;
 }
 
 .underline-blink {
 	height: 0.625rem;
-	width: 4.5rem;
+	width: 3rem;
 }
 
 @keyframes blink {
