@@ -8,100 +8,162 @@
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
     <style>
+        /* CSS Variables matching Secnap design system */
         :root {
             --secnap-orange: #FF3B0A;
-            --secnap-white: #FFFFFF;
-            --secnap-black: #0a0a1a;
-            --secnap-dark-purple: #1a0a2e;
-            --secnap-purple: #2d1b4e;
+            --secnap-black: #0F0F1E;
+            --secnap-purple: #5B21B6;
             --secnap-teal: #0AC2A1;
-            --secnap-text-light: #999;
+            --secnap-text-light: #666666;
+            --secnap-border: rgba(0, 0, 0, 0.1);
+            --secnap-bg-white: #FFFFFF;
+            --secnap-bg-dark: #0F0F1E;
         }
 
+        /* Global Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: var(--secnap-black);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         /* Top Bar */
         .top-bar {
             background-color: #c42020;
-            padding: 10px 0;
+            padding: 12px 0;
+            font-size: 14px;
         }
 
         .top-bar a {
             color: white;
             text-decoration: none;
-            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .top-bar a:hover {
+            opacity: 0.8;
         }
 
         /* Navigation */
-        .navbar {
-            background-color: var(--secnap-black);
-            padding: 1rem 0;
+        .navbar-custom {
+            background-color: var(--secnap-bg-dark);
+            padding: 1.25rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .navbar-brand {
+        .navbar-brand-custom {
             color: white !important;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .navbar-brand::before {
+        .navbar-brand-custom::before {
             content: '>_';
             color: var(--secnap-orange);
-            margin-right: 8px;
+            font-weight: 700;
         }
 
-        .nav-link {
+        .nav-link-custom {
             color: rgba(255, 255, 255, 0.7) !important;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: white !important;
-        }
-
-        .btn-orange {
-            background-color: var(--secnap-orange);
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 30px;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
             transition: all 0.3s;
         }
 
-        .btn-orange:hover {
+        .nav-link-custom:hover,
+        .nav-link-custom.active {
+            color: white !important;
+            opacity: 1;
+        }
+
+        .dropdown-menu-custom {
+            background-color: var(--secnap-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-item-custom {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        /* Buttons */
+        .btn-secnap-orange {
+            background-color: var(--secnap-orange);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        .btn-secnap-orange:hover {
             background-color: #ff5530;
             color: white;
             transform: translateX(5px);
         }
 
-        .btn-white {
+        .btn-secnap-orange::after {
+            content: '→';
+            font-size: 18px;
+        }
+
+        .btn-secnap-white {
             background-color: white;
             color: var(--secnap-black);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 24px;
-            border-radius: 30px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
         }
 
-        .btn-white:hover {
-            background-color: #f0f0f0;
+        .btn-secnap-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
             color: var(--secnap-black);
+            transform: translateX(5px);
+        }
+
+        .btn-secnap-white::after {
+            content: '→';
+            font-size: 18px;
         }
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--secnap-black) 0%, var(--secnap-dark-purple) 50%, var(--secnap-purple) 100%);
+            background: linear-gradient(135deg, #0F0F1E 0%, #1a0a2e 50%, #2d1b4e 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             position: relative;
             overflow: hidden;
         }
@@ -111,158 +173,293 @@
             position: absolute;
             top: 0;
             right: 0;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
             bottom: 0;
             left: 0;
-            background: radial-gradient(circle at top right, rgba(217, 70, 239, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-section h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-section p.lead {
-            font-size: 1.5rem;
-            color: #ccc;
-            margin-bottom: 2rem;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secnap-orange), transparent);
         }
 
         .hero-deco {
-            color: var(--secnap-orange);
-            font-size: 3rem;
-            display: inline-block;
-            margin-right: 1rem;
-        }
-
-        /* Pricing Calculator Section */
-        .pricing-calculator {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .tag {
-            display: inline-block;
-            background: rgba(255, 59, 10, 0.1);
-            color: var(--secnap-orange);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card:hover {
-            border-color: var(--secnap-orange);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 59, 10, 0.15);
-        }
-
-        .pricing-card img {
-            width: 80px;
-            height: 80px;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 1.5rem;
         }
 
-        .pricing-card h3 {
-            font-size: 1.5rem;
+        .hero-deco svg {
+            width: 100px;
+            height: auto;
+            margin-right: 1rem;
+        }
+
+        .hero-section h1 {
+            font-size: 4.5rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-section .lead {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            max-width: 800px;
+        }
+
+        .hero-cursor::after {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1em;
+            background: var(--secnap-orange);
+            margin-left: 8px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Pricing Calculator Section */
+        .pricing-calculator-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(255, 59, 10, 0.1);
+            color: var(--secnap-orange);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-tag::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--secnap-orange);
+            border-radius: 50%;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: white;
+            border: 1px solid var(--secnap-border);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(45deg, var(--secnap-purple), rgba(255, 10, 141, 0.32) 40%, var(--secnap-orange));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .pricing-card:hover {
+            border-color: transparent;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 59, 10, 0.15);
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-card-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.75rem;
+            object-fit: contain;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secnap-black);
+            letter-spacing: -0.02em;
         }
 
         .pricing-card p {
             color: var(--secnap-text-light);
             flex-grow: 1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
-        .pricing-card .form-control {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 12px 16px;
-        }
-
-        .pricing-card .form-control:focus {
-            border-color: var(--secnap-orange);
-            box-shadow: 0 0 0 0.2rem rgba(255, 59, 10, 0.15);
+        .pricing-card-divider {
+            height: 1px;
+            background: var(--secnap-border);
+            margin: 1.75rem 0;
         }
 
         .pricing-card label {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             color: var(--secnap-black);
+            font-size: 14px;
         }
 
-        .form-divider {
-            height: 1px;
-            background: rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
+        .pricing-card .form-control {
+            border: 1px solid var(--secnap-border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card .form-control:focus {
+            border-color: var(--secnap-orange);
+            box-shadow: 0 0 0 3px rgba(255, 59, 10, 0.1);
+            outline: none;
+        }
+
+        /* Form Sections */
+        .form-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-control-custom {
+            border: 1px solid var(--secnap-border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--secnap-orange);
+            box-shadow: 0 0 0 3px rgba(255, 59, 10, 0.1);
+            outline: none;
+        }
+
+        .form-label-custom {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--secnap-black);
+            font-size: 14px;
         }
 
         /* Comparison Section */
         .comparison-section {
-            padding: 80px 0;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background: #F9FAFB;
         }
 
         .comparison-key {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .key-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .key-label {
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 11px;
+            letter-spacing: 1px;
             color: var(--secnap-text-light);
         }
 
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(10, 194, 161, 0.15);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secnap-teal);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .add-on-badge {
+            background: rgba(255, 59, 10, 0.1);
+            color: var(--secnap-orange);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .not-available {
+            color: #cccccc;
+            font-size: 24px;
+        }
+
+        /* Comparison Table */
         .comparison-table {
             background: white;
-            border-radius: 15px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .comparison-header {
-            background: linear-gradient(135deg, var(--secnap-black) 0%, var(--secnap-dark-purple) 100%);
+            background: linear-gradient(135deg, #0F0F1E 0%, #2d1b4e 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .comparison-row {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 1.5rem;
+            border-bottom: 1px solid var(--secnap-border);
+            padding: 2rem;
             transition: background 0.2s;
         }
 
         .comparison-row:hover {
-            background: #f8f9fa;
+            background: #F9FAFB;
         }
 
         .comparison-row:last-child {
@@ -272,64 +469,45 @@
         .tier-label {
             background: linear-gradient(135deg, var(--secnap-orange) 0%, #d946ef 100%);
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
             display: inline-block;
+            font-size: 15px;
+            letter-spacing: 0.5px;
         }
 
         .feature-title {
             font-weight: 700;
-            font-size: 1.125rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
         }
 
         .feature-desc {
             color: var(--secnap-text-light);
-            font-size: 0.875rem;
-        }
-
-        .check-icon {
-            width: 24px;
-            height: 24px;
-            background: rgba(10, 194, 161, 0.24);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secnap-teal);
-        }
-
-        .add-on-badge {
-            background: rgba(255, 59, 10, 0.1);
-            color: var(--secnap-orange);
-            padding: 4px 12px;
-            border-radius: 12px;
             font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .not-available {
-            color: #ccc;
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(180deg, #1a0a0a 0%, var(--secnap-black) 100%);
+            background: linear-gradient(180deg, #1a0a0a 0%, var(--secnap-bg-dark) 100%);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
         }
 
         footer h5 {
             font-size: 1.125rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            font-weight: 700;
         }
 
         footer a {
-            color: var(--secnap-text-light);
+            color: #999999;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 15px;
         }
 
         footer a:hover {
@@ -338,23 +516,67 @@
 
         footer .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            margin-top: 3rem;
-            color: #666;
+            padding-top: 2.5rem;
+            margin-top: 4rem;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        .contact-box h5 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-box p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 15px;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
             .hero-section h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
-            .hero-section p.lead {
-                font-size: 1.125rem;
+            .hero-section .lead {
+                font-size: 1.25rem;
             }
 
             .comparison-row {
-                padding: 1rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-section h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+
+            .pricing-calculator-section,
+            .comparison-section {
+                padding: 60px 0;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                padding: 1.5rem 1rem;
             }
         }
     </style>
@@ -363,50 +585,58 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <div class="d-flex justify-content-end gap-3">
+            <div class="d-flex justify-content-end gap-4 flex-wrap">
                 <a href="#">🤝 PARTNER WITH SECNAP</a>
-                <a href="#">📞 +1.844.638.7328</a>
+                <a href="tel:+18446387328">📞 +1.844.638.7328</a>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">secnap</a>
+            <a class="navbar-brand-custom" href="index.html">secnap</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solutions</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="solutions.html">Solutions Overview</a></li>
+                        <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown">
+                            Solutions
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom">
+                            <li><a class="dropdown-item dropdown-item-custom" href="cloudjacket.html">CloudJacket</a></li>
+                            <li><a class="dropdown-item dropdown-item-custom" href="solutions.html">All Solutions</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="services.html">Services Overview</a></li>
+                        <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom">
+                            <li><a class="dropdown-item dropdown-item-custom" href="services.html">Services Overview</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="pricing.html">Pricing</a>
+                        <a class="nav-link nav-link-custom active" href="pricing.html">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="why-secnap.html">Why Secnap</a>
+                        <a class="nav-link nav-link-custom" href="why-secnap.html">Why Secnap</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Resources</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="resources.html">Resources</a></li>
+                        <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom">
+                            <li><a class="dropdown-item dropdown-item-custom" href="resources.html">White Papers</a></li>
+                            <li><a class="dropdown-item dropdown-item-custom" href="blog.html">Blog</a></li>
                         </ul>
                     </li>
                 </ul>
-                <div class="d-flex gap-2">
-                    <a href="#pricing-calculator" class="btn btn-orange">Get a Custom Quote</a>
-                    <a href="contact.html" class="btn btn-white">Contact us</a>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="#pricing-calculator" class="btn-secnap-orange text-decoration-none">Get a Custom Quote</a>
+                    <a href="contact.html" class="btn-secnap-white text-decoration-none">Contact us</a>
                 </div>
             </div>
         </div>
@@ -417,14 +647,17 @@
         <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-10">
-                    <div class="mb-3">
-                        <span class="hero-deco">>_</span>
-                        <h1 class="d-inline">Our Pricing</h1>
+                    <div class="hero-deco">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="122" height="78" viewBox="0 0 122 78" fill="none">
+                            <path d="M121.579 67.1763V78.0001H66.1387V67.1763H121.579Z" fill="#FF3B0A"/>
+                            <path d="M57.0116 37.6024L0.420654 65.0456V52.0058L42.182 33.0001L41.7559 33.7246V31.8922L42.182 32.6592L0.420654 13.6109V0.61377L57.0116 28.0569V37.6024Z" fill="#FF3B0A"/>
+                        </svg>
                     </div>
+                    <h1>Our Pricing<span class="hero-cursor"></span></h1>
                     <p class="lead">Enterprise-grade protection tailored to your organization's scale, delivering comprehensive security without complexity.</p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="#comparison" class="btn btn-orange">Compare Pricing Tiers</a>
-                        <a href="#pricing-calculator" class="btn btn-white">Get a Custom Quote</a>
+                    <div class="d-flex gap-3 flex-wrap mt-4">
+                        <a href="#comparison" class="btn-secnap-orange text-decoration-none">Compare Pricing Tiers</a>
+                        <a href="#pricing-calculator" class="btn-secnap-white text-decoration-none">Get a Custom Quote</a>
                     </div>
                 </div>
             </div>
@@ -432,52 +665,52 @@
     </section>
 
     <!-- Pricing Calculator Section -->
-    <section id="pricing-calculator" class="pricing-calculator">
+    <section id="pricing-calculator" class="pricing-calculator-section">
         <div class="container">
             <div class="text-center mb-5">
-                <div class="tag">Pricing calculator</div>
-                <h2 class="display-5 fw-bold">Complete the form below to get your quote</h2>
+                <div class="section-tag">Pricing calculator</div>
+                <h2 class="display-5 fw-bold mb-4">Complete the form below to get your quote</h2>
             </div>
 
             <form id="pricing-form" action="/pricing-thank-you" method="get">
                 <!-- Pricing Cards -->
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="pricing-card">
-                            <img src="images/Pricing-Users2x.png" alt="Users" class="img-fluid">
+                            <img src="images/Pricing-Users2x.png" alt="Users" class="pricing-card-icon">
                             <h3>Users</h3>
                             <p>Protection scaled to your total number of monitored endpoints.</p>
-                            <div class="form-divider"></div>
+                            <div class="pricing-card-divider"></div>
                             <label for="number-of-users" class="form-label">Number of users</label>
                             <input type="number" class="form-control" id="number-of-users" name="number-of-users" placeholder="Number of users" required>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="pricing-card">
-                            <img src="images/Pricing-Workstations2x.png" alt="Workstations" class="img-fluid">
+                            <img src="images/Pricing-Workstations2x.png" alt="Workstations" class="pricing-card-icon">
                             <h3>Workstations</h3>
                             <p>Coverage determined by your desktop and laptop fleet.</p>
-                            <div class="form-divider"></div>
+                            <div class="pricing-card-divider"></div>
                             <label for="number-of-workstations" class="form-label">Number of workstations</label>
                             <input type="number" class="form-control" id="number-of-workstations" name="number-of-workstations" placeholder="Number of workstations" required>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="pricing-card">
-                            <img src="images/Pricing-Servers2x.png" alt="Servers" class="img-fluid">
+                            <img src="images/Pricing-Servers2x.png" alt="Servers" class="pricing-card-icon">
                             <h3>Servers</h3>
                             <p>Coverage determined by your number of servers.</p>
-                            <div class="form-divider"></div>
+                            <div class="pricing-card-divider"></div>
                             <label for="number-of-servers" class="form-label">Number of servers</label>
                             <input type="number" class="form-control" id="number-of-servers" name="number-of-servers" placeholder="Number of servers" required>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="pricing-card">
-                            <img src="images/Why-Headquarters2x.png" alt="Locations" class="img-fluid">
+                            <img src="images/Why-Headquarters2x.png" alt="Locations" class="pricing-card-icon">
                             <h3>Locations</h3>
                             <p>Coverage determined by your number of internet facing firewalls.</p>
-                            <div class="form-divider"></div>
+                            <div class="pricing-card-divider"></div>
                             <label for="number-of-locations" class="form-label">Number of locations</label>
                             <input type="number" class="form-control" id="number-of-locations" name="number-of-locations" placeholder="Number of locations" required>
                         </div>
@@ -485,47 +718,49 @@
                 </div>
 
                 <!-- Contact Form Fields -->
-                <div class="row g-4 mb-4 mx-auto" style="max-width: 800px;">
-                    <div class="col-md-6">
-                        <label for="first-name" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first-name" name="Lead-First-Name" placeholder="Enter first name" required>
+                <div class="form-section">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <label for="first-name" class="form-label-custom">First name</label>
+                            <input type="text" class="form-control-custom form-control" id="first-name" name="Lead-First-Name" placeholder="Enter first name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last-name" class="form-label-custom">Last name</label>
+                            <input type="text" class="form-control-custom form-control" id="last-name" name="Lead-Last-Name" placeholder="Enter last name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label-custom">Email</label>
+                            <input type="email" class="form-control-custom form-control" id="email" name="Lead-Email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label-custom">Phone</label>
+                            <input type="tel" class="form-control-custom form-control" id="phone" name="Lead-Phone" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="company-name" class="form-label-custom">Company name</label>
+                            <input type="text" class="form-control-custom form-control" id="company-name" name="Lead-Company-Name" placeholder="Enter company name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="website" class="form-label-custom">Company website</label>
+                            <input type="text" class="form-control-custom form-control" id="website" name="Lead-Website" placeholder="Enter website" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="job-title" class="form-label-custom">Job Title</label>
+                            <input type="text" class="form-control-custom form-control" id="job-title" name="Lead-Job-Title" placeholder="Enter job title" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="country" class="form-label-custom">Country</label>
+                            <input type="text" class="form-control-custom form-control" id="country" name="Lead-Country" placeholder="Enter country" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="additional" class="form-label-custom">Any additional information (Optional)</label>
+                            <textarea class="form-control-custom form-control" id="additional" name="additional" rows="5" placeholder="Any additional information"></textarea>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="last-name" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last-name" name="Lead-Last-Name" placeholder="Enter last name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="Lead-Email" placeholder="Enter email address" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="Lead-Phone" placeholder="Enter phone number" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="company-name" class="form-label">Company name</label>
-                        <input type="text" class="form-control" id="company-name" name="Lead-Company-Name" placeholder="Enter company name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="website" class="form-label">Company website</label>
-                        <input type="text" class="form-control" id="website" name="Lead-Website" placeholder="Enter website" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="job-title" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" id="job-title" name="Lead-Job-Title" placeholder="Enter job title" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="Lead-Country" placeholder="Enter country" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="additional" class="form-label">Any additional information (Optional)</label>
-                        <textarea class="form-control" id="additional" name="additional" rows="4" placeholder="Any additional information"></textarea>
-                    </div>
-                </div>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-orange btn-lg px-5">Get a quote →</button>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn-secnap-orange">Get a quote</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -535,23 +770,25 @@
     <section id="comparison" class="comparison-section">
         <div class="container">
             <div class="text-center mb-5">
-                <div class="tag">SOLUTIONS</div>
-                <h2 class="display-5 fw-bold">Comprehensive Protection, Simplified.</h2>
+                <div class="section-tag">SOLUTIONS</div>
+                <h2 class="display-5 fw-bold mb-2">Comprehensive Protection, Simplified.</h2>
             </div>
 
             <!-- Key Legend -->
             <div class="comparison-key">
-                <div class="key-item">
-                    <span class="check-icon">✓</span>
-                    <span class="key-label">INCLUDED</span>
-                </div>
-                <div class="key-item">
-                    <span class="add-on-badge">+</span>
-                    <span class="key-label">ADD-ON</span>
-                </div>
-                <div class="key-item">
-                    <span class="not-available">—</span>
-                    <span class="key-label">NOT AVAILABLE</span>
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div class="key-item">
+                        <span class="check-icon">✓</span>
+                        <span class="key-label">INCLUDED</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="add-on-badge">+</span>
+                        <span class="key-label">ADD-ON</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="not-available">—</span>
+                        <span class="key-label">NOT AVAILABLE</span>
+                    </div>
                 </div>
             </div>
 
@@ -559,12 +796,12 @@
             <div class="comparison-table">
                 <!-- Header -->
                 <div class="comparison-header">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
-                            <h5 class="fw-bold mb-0">KEY FEATURES</h5>
+                            <h5 class="fw-bold mb-0 text-uppercase" style="letter-spacing: 1px;">KEY FEATURES</h5>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="tier-label">XDR</span>
                                 </div>
@@ -578,13 +815,13 @@
 
                 <!-- Features -->
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">CloudJacket Platform</div>
                             <div class="feature-desc">Advanced expert driven AI-augmented security monitoring and response.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -597,13 +834,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Client-Accessible Web Portal</div>
                             <div class="feature-desc">Real-time visibility into security events and alerts.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -616,13 +853,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">System File Integrity Monitoring</div>
                             <div class="feature-desc">Detects and records changes to critical system files.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -635,13 +872,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Endpoint Inventory</div>
                             <div class="feature-desc">Collects and displays security and regulatory compliance data for individual endpoints.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -654,13 +891,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Endpoint Agent Provisioning</div>
                             <div class="feature-desc">Deployment of endpoint security agents.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -673,13 +910,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">30-Day Data Index</div>
                             <div class="feature-desc">Readily available security data index available on customer facing dashboard.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -692,13 +929,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Malware Detection</div>
                             <div class="feature-desc">Scans filesystem and registry for malware, detecting rootkits via processes, ports, files, permissions, and network interfaces.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="check-icon">✓</span>
                                 </div>
@@ -711,13 +948,32 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
+                        <div class="col-md-6">
+                            <div class="feature-title">Security Configuration Assessment</div>
+                            <div class="feature-desc">Continuous assessment of system configurations against security best practices.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row text-center g-3">
+                                <div class="col-6">
+                                    <span class="check-icon">✓</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="check-icon">✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">24/7/365 Security Monitoring</div>
-                            <div class="feature-desc">Round-the-clock security event monitoring and alerting.</div>
+                            <div class="feature-desc">Round-the-clock security event monitoring and alerting by expert analysts.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="not-available">—</span>
                                 </div>
@@ -730,13 +986,13 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Expert-Led Threat Response</div>
-                            <div class="feature-desc">Human-driven incident response and remediation.</div>
+                            <div class="feature-desc">Human-driven incident response and remediation by certified security professionals.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="not-available">—</span>
                                 </div>
@@ -749,13 +1005,32 @@
                 </div>
 
                 <div class="comparison-row">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
                         <div class="col-md-6">
                             <div class="feature-title">Dedicated Security Analyst</div>
-                            <div class="feature-desc">Assigned security expert for your organization.</div>
+                            <div class="feature-desc">Assigned security expert who knows your environment and business.</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row text-center">
+                            <div class="row text-center g-3">
+                                <div class="col-6">
+                                    <span class="not-available">—</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="check-icon">✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="row align-items-center g-3">
+                        <div class="col-md-6">
+                            <div class="feature-title">Threat Hunting</div>
+                            <div class="feature-desc">Proactive threat hunting to identify hidden threats before they cause damage.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row text-center g-3">
                                 <div class="col-6">
                                     <span class="not-available">—</span>
                                 </div>
@@ -769,7 +1044,7 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="#pricing-calculator" class="btn btn-orange btn-lg px-5">Get Started →</a>
+                <a href="#pricing-calculator" class="btn-secnap-orange text-decoration-none" style="padding: 16px 40px; font-size: 16px;">Get Started</a>
             </div>
         </div>
     </section>
@@ -777,44 +1052,69 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-3">
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
                     <h5>CloudJacket</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">About CloudJacket</a></li>
-                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
-                        <li class="mb-2"><a href="#">Services</a></li>
+                        <li class="mb-3"><a href="cloudjacket.html">About CloudJacket</a></li>
+                        <li class="mb-3"><a href="pricing.html">Pricing</a></li>
+                        <li class="mb-3"><a href="services.html">Services</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6 col-lg-3">
                     <h5>Resources</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">White Papers</a></li>
+                        <li class="mb-3"><a href="resources.html">White Papers</a></li>
+                        <li class="mb-3"><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6 col-lg-3">
                     <h5>Company</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">About Secnap</a></li>
-                        <li class="mb-2"><a href="#">Partner with Secnap</a></li>
+                        <li class="mb-3"><a href="why-secnap.html">About Secnap</a></li>
+                        <li class="mb-3"><a href="#">Partner with Secnap</a></li>
+                        <li class="mb-3"><a href="#">Careers</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <div class="p-4 rounded" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-box">
                         <h5>Contact us</h5>
-                        <p style="color: #ccc;">Comprehensive cybersecurity with 24/7 expert protection. Get tailored solutions that combine human intelligence with augmented detection for true peace of mind.</p>
-                        <a href="contact.html" class="btn btn-orange mt-3">Contact us →</a>
+                        <p>Comprehensive cybersecurity with 24/7 expert protection. Get tailored solutions that combine human intelligence with augmented detection for true peace of mind.</p>
+                        <a href="contact.html" class="btn-secnap-orange text-decoration-none">Contact us</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom d-flex justify-content-between align-items-center">
+            <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <div>© 2025 Secnap Network Security Corporation. All rights reserved</div>
-                <div><a href="#" style="color: #666;">Privacy Policy</a></div>
+                <div><a href="#">Privacy Policy</a></div>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap 5.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('pricing-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            window.location.href = this.action;
+        });
+    </script>
 </body>
 </html>
