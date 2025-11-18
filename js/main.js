@@ -70,14 +70,12 @@ window.addEventListener("load", (event) => {
 		}
 	});
 });
-
+/* moved initial animation as is with some code fixes to prevent bugs in the console */
 window.onload = function () {
 	let mainHeading = document.querySelector('[main-h]');
 	mainHeading.style.minHeight = `${mainHeading.offsetHeight}px`;
 	let heroSpan1 = document.querySelector('[hero-span-1]');
-	let heroSpan2 = document.querySelector('[hero-span-2]');
 	let heroSpan1Txt = heroSpan1.textContent;
-	let heroSpan2Txt = heroSpan2.textContent;
 	let heroTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: 'section',
@@ -86,8 +84,12 @@ window.onload = function () {
 		}
 	});
 	heroTl.fromTo(heroSpan1, { text: '' }, { text: heroSpan1Txt, duration: 0.5 });
-	//heroTl.fromTo(heroSpan1, { display: 'inline-block' }, { display: 'block' });
-	heroTl.fromTo(heroSpan2, { display: 'none', text: '' }, { display: 'inline-block', text: heroSpan2Txt, duration: 0.75 }, '-=0.5');
+
+	let heroSpan2 = document.querySelector('[hero-span-2]');
+	if (heroSpan2) {
+		let heroSpan2Txt = heroSpan2.textContent;
+		heroTl.fromTo(heroSpan2, { display: 'none', text: '' }, { display: 'inline-block', text: heroSpan2Txt, duration: 0.75 }, '-=0.5');
+	}
 
 	// Typed Anim
 	let typedElements = document.querySelectorAll('[typed-anim]');
