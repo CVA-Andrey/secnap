@@ -111,4 +111,17 @@ window.onload = function () {
 				ease: "none",
 			});
 	});
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('progress-block-visible');
+				observer.unobserve(entry.target); // Stop observing once visible
+			}
+		});
+	}, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+
+	document.querySelectorAll('.progress-block-hidden').forEach(element => {
+		observer.observe(element);
+	});
 }

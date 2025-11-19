@@ -252,7 +252,7 @@ body {
 
 .glass-card:hover {
 	background: linear-gradient(black, black) padding-box,
-		linear-gradient(to right, darkblue, darkorchid) border-box;
+	linear-gradient(to right, darkblue, darkorchid) border-box;
 	/* original colors to bright
 	background: linear-gradient(black, black) padding-box,
 		linear-gradient(45deg, var(--purple), rgb(255, 10, 141, 0.32) 40%, var(--orange));*/
@@ -261,8 +261,12 @@ body {
 
 /* Animations */
 @keyframes typedCursor {
-	30%, 70% { opacity: 1; }
-	40%, 60% { opacity: 0; }
+	30%, 70% {
+		opacity: 1;
+	}
+	40%, 60% {
+		opacity: 0;
+	}
 }
 
 .typed-cursor::after {
@@ -320,4 +324,33 @@ footer a:hover {
 
 .w-35 {
 	width: 35% !important;
+}
+
+.progress-block-hidden {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.progress-block-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.progress-base {
+	border-left: 2px solid rgba(255, 59, 10, 0.2);
+	padding-left: 0;
+}
+
+.progress-line {
+	left: -1.9rem;
+	top: 0;
+	width: 12px;
+	height: 12px;
+	background-color: #FF3B0A;
+	border-radius: 50%;
+}
+
+.orange {
+	background: var(--orange);
 }
