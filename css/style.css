@@ -105,7 +105,6 @@ body {
 .form-control {
 	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255, 255, 255, 0.2);
-	color: #fff;
 	padding: 0.75rem 1rem;
 	border-radius: 0.5rem;
 }
@@ -113,7 +112,6 @@ body {
 .form-control:focus {
 	background: rgba(255, 255, 255, 0.08);
 	border-color: rgba(255, 255, 255, 0.4);
-	box-shadow: none;
 }
 
 .form-control::placeholder {
@@ -397,10 +395,17 @@ footer a:hover {
 	object-fit: contain;
 }
 
-.pricing-card .divider {
+.white-glass-card .divider {
 	height: 1px;
 	background: var(--bs-gray-400);
 	margin: 1.5rem 0;
+}
+
+.white-glass-card p {
+	color: var(--text-dark);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
 }
 /* white glass ends */
 

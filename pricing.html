@@ -184,7 +184,7 @@
 					<p>Protection scaled to your total number of monitored endpoints.</p>
 					<div class="divider"></div>
 					<label class="form-label">Number of users</label>
-					<input type="number" class="form-control form-control-custom" placeholder="Number of users" name="number-of-users" required="">
+					<input type="number" class="form-control form-control-custom" placeholder="Number of users" name="number-of-users" required>
 				</div>
 			</div>
 
@@ -197,7 +197,7 @@
 					<p>Coverage determined by your desktop and laptop fleet.</p>
 					<div class="divider"></div>
 					<label class="form-label">Number of workstations</label>
-					<input type="number" class="form-control form-control-custom" placeholder="Number of workstations" name="number-of-workstations" required="">
+					<input type="number" class="form-control form-control-custom" placeholder="Number of workstations" name="number-of-workstations" required>
 				</div>
 			</div>
 
@@ -210,7 +210,7 @@
 					<p>Coverage determined by your number of servers.</p>
 					<div class="divider"></div>
 					<label class="form-label">Number of servers</label>
-					<input type="number" class="form-control form-control-custom" placeholder="Number of servers" name="number-of-servers" required="">
+					<input type="number" class="form-control form-control-custom" placeholder="Number of servers" name="number-of-servers" required>
 				</div>
 			</div>
 
@@ -223,64 +223,63 @@
 					<p>Coverage determined by your number of internet facing firewalls.</p>
 					<div class="divider"></div>
 					<label class="form-label">Number of locations</label>
-					<input type="number" class="form-control form-control-custom" placeholder="Number of locations" name="number-of-locations" required="">
+					<input type="number" class="form-control form-control-custom" placeholder="Number of locations" name="number-of-locations" required>
 				</div>
 			</div>
 		</div>
 
-		<!-- Contact Form -->
-		<form id="pricing-form" class="mx-auto" style="max-width: 700px;">
+		<form id="wf-form-Pricing-Form" name="wf-form-Pricing-Form-2" data-name="Pricing Form" redirect="/pricing-thank-you" data-redirect="/pricing-thank-you" method="get" autocomplete="off" class="mx-auto w-50" data-wf-page-id="676d6c8b1fc228150155573f" data-wf-element-id="8f6bf176-c00d-4576-5f2d-a2e332b2c858">
 			<div class="row g-3 mb-3">
 				<div class="col-md-6">
-					<label class="form-label">First name</label>
-					<input type="text" class="form-control form-control-custom" placeholder="Enter first name" name="first-name" required="">
+					<label class="form-label" for="partner-first-name">First name</label>
+					<input type="text" class="form-control form-control-custom" placeholder="Enter first name" id="partner-first-name" name="partner-first-name" required>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">Last name</label>
-					<input type="text" class="form-control form-control-custom" placeholder="Enter last name" name="last-name" required="">
+					<label class="form-label" for="partner-last-name">Last name</label>
+					<input type="text" class="form-control form-control-custom" placeholder="Enter last name" id="partner-last-name" name="partner-last-name" required>
 				</div>
 			</div>
 
 			<div class="row g-3 mb-3">
 				<div class="col-md-6">
-					<label class="form-label">Email</label>
-					<input type="email" class="form-control form-control-custom" placeholder="Enter email address" name="email" required="">
+					<label class="form-label" for="partner-email">Email</label>
+					<input type="email" class="form-control form-control-custom" placeholder="Enter email address" id="partner-email" name="partner-email" required>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">Phone</label>
-					<input type="tel" class="form-control form-control-custom" placeholder="Enter phone number" name="phone" required="">
-				</div>
-			</div>
-
-			<div class="row g-3 mb-3">
-				<div class="col-md-6">
-					<label class="form-label">Company name</label>
-					<input type="text" class="form-control form-control-custom" placeholder="Enter company name" name="company-name" required="">
-				</div>
-				<div class="col-md-6">
-					<label class="form-label">Company website</label>
-					<input type="url" class="form-control form-control-custom" placeholder="Enter website" name="website" required="">
+					<label class="form-label" for="partner-phone">Phone</label>
+					<input type="tel" class="form-control form-control-custom" placeholder="Enter phone number" id="partner-phone" name="partner-phone" required>
 				</div>
 			</div>
 
 			<div class="row g-3 mb-3">
 				<div class="col-md-6">
-					<label class="form-label">Job Title</label>
-					<input type="text" class="form-control form-control-custom" placeholder="Enter job title" name="job-title" required="">
+					<label class="form-label" for="partner-company-name">Company name</label>
+					<input type="text" class="form-control form-control-custom" placeholder="Enter company name" id="partner-company-name" name="partner-company-name" required>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">Country</label>
-					<input type="text" class="form-control form-control-custom" placeholder="Enter country" name="country" required="">
+					<label class="form-label" for="partner-website">Company website</label>
+					<input type="url" class="form-control form-control-custom" placeholder="Enter website" id="partner-website" name="partner-website" required>
+				</div>
+			</div>
+
+			<div class="row g-3 mb-3">
+				<div class="col-md-6">
+					<label class="form-label" for="partner-job-title">Job Title</label>
+					<input type="text" class="form-control form-control-custom" placeholder="Enter job title" id="partner-job-title" name="partner-job-title" required>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label" for="partner-country">Country</label>
+					<input type="text" class="form-control form-control-custom" placeholder="Enter country" id="partner-country" name="partner-country" required>
 				</div>
 			</div>
 
 			<div class="mb-4">
-				<label class="form-label">Any additional information (Optional)</label>
-				<textarea class="form-control form-control-custom" placeholder="Any additional information" name="additional" rows="4"></textarea>
+				<label class="form-label" for="additional">Any additional information (Optional)</label>
+				<textarea class="form-control form-control-custom" placeholder="Any additional information" id="additional" name="additional" rows="4" maxlength="5000"></textarea>
 			</div>
 
 			<div class="text-center">
-				<button type="submit" class="btn-orange">
+				<button type="submit" class="btn-orange rounded-pill">
 					Get a quote
 					<i class="bi bi-chevron-right"></i>
 				</button>
