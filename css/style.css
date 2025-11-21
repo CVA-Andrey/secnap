@@ -113,7 +113,6 @@ body {
 .form-control:focus {
 	background: rgba(255, 255, 255, 0.08);
 	border-color: rgba(255, 255, 255, 0.4);
-	color: #fff;
 	box-shadow: none;
 }
 
@@ -353,4 +352,217 @@ footer a:hover {
 
 .orange {
 	background: var(--orange);
+}
+
+/* white glass ends: sample in pricing.html */
+.white-glass-card {
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid var(--bs-gray-400);
+	border-radius: 1rem;
+	padding: 2rem;
+	height: 100%;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+.white-glass-card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1px;
+	background: linear-gradient(45deg, var(--purple), rgba(255, 10, 141, 0.32) 40%, var(--orange));
+	mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	mask-composite: exclude;
+	-webkit-mask-composite: xor;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+	pointer-events: none;
+}
+
+.white-glass-card:hover::after {
+	opacity: 1;
+}
+
+.white-glass-card-icon {
+	width: 64px;
+	height: 64px;
+	margin-bottom: 1.5rem;
+}
+
+.white-glass-card-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.pricing-card .divider {
+	height: 1px;
+	background: var(--bs-gray-400);
+	margin: 1.5rem 0;
+}
+/* white glass ends */
+
+/* Form Styles */
+.form-label {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--black);
+	margin-bottom: 0.5rem;
+}
+
+.form-control-custom {
+	background: transparent;
+	border: 1px solid var(--bs-gray-400);
+	border-radius: 0.5rem;
+	padding: 0.875rem 1rem;
+	font-size: 0.9375rem;
+	color: var(--black);
+	transition: border-color 0.25s ease;
+}
+
+.form-control-custom::placeholder {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.form-control-custom:focus {
+	outline: none;
+	border-color: rgba(0, 0, 0, 0.3);
+	box-shadow: none;
+}
+
+textarea.form-control-custom {
+	min-height: 100px;
+	resize: none;
+}
+
+/* Comparison Section */
+.comparison-section {
+	background-color: var(--white);
+	color: var(--black);
+	padding: 5rem 0;
+}
+
+.comparison-key {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin-bottom: 3rem;
+	flex-wrap: wrap;
+}
+
+.key-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--text-dark);
+}
+
+.key-icon {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.check-icon {
+	width: 24px;
+	height: 24px;
+	background: rgba(10, 194, 161, 0.24);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.check-icon svg {
+	width: 12px;
+	height: 12px;
+	color: var(--green-check);
+}
+
+.addon-badge {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--black);
+}
+
+.not-available-icon {
+	width: 24px;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.32);
+}
+
+/* Comparison Table */
+.comparison-table {
+	border: none;
+}
+
+.comparison-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border-bottom: 1px solid var(--bs-gray-400);
+	padding: 1.5rem 0;
+}
+
+.comparison-row.header {
+	border-bottom: 1px solid var(--bs-gray-400);
+	padding-bottom: 1.5rem;
+	margin-bottom: 0;
+}
+
+.comparison-row:last-child {
+	border-bottom: none;
+}
+
+.feature-col {
+	padding-right: 2rem;
+}
+
+.feature-col h4 {
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+
+.feature-col p {
+	color: var(--text-dark);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin: 0;
+	max-width: 400px;
+}
+
+.plan-col {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.plan-col.header-col {
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+/* MDR Column Highlight */
+.mdr-highlight {
+	position: relative;
+}
+
+.mdr-highlight::before {
+	content: '';
+	position: absolute;
+	top: -1.5rem;
+	bottom: -1.5rem;
+	left: -1rem;
+	right: -1rem;
+	background: linear-gradient(45deg, rgba(123, 43, 255, 0.05), rgba(255, 10, 141, 0.02), rgba(255, 59, 10, 0.05));
+	filter: blur(20px);
+	z-index: -1;
 }
