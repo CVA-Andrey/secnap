@@ -83,12 +83,12 @@ window.onload = function () {
 			end: 'top bottom'
 		}
 	});
-	heroTl.fromTo(heroSpan1, { text: '' }, { text: heroSpan1Txt, duration: 0.5 });
+	heroTl.fromTo(heroSpan1, {text: ''}, {text: heroSpan1Txt, duration: 0.5});
 
 	let heroSpan2 = document.querySelector('[hero-span-2]');
 	if (heroSpan2) {
 		let heroSpan2Txt = heroSpan2.textContent;
-		heroTl.fromTo(heroSpan2, { display: 'none', text: '' }, { display: 'inline-block', text: heroSpan2Txt, duration: 0.75 }, '-=0.5');
+		heroTl.fromTo(heroSpan2, {display: 'none', text: ''}, {display: 'inline-block', text: heroSpan2Txt, duration: 0.75}, '-=0.5');
 	}
 
 	// Typed Anim
@@ -119,7 +119,7 @@ window.onload = function () {
 				observer.unobserve(entry.target); // Stop observing once visible
 			}
 		});
-	}, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+	}, {threshold: 0.5}); // Trigger when 50% of the element is visible
 
 	document.querySelectorAll('.progress-block-hidden').forEach(element => {
 		observer.observe(element);
