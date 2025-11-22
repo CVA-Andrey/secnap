@@ -1,9 +1,13 @@
 :root {
 	--orange: #FF3B0A;
+	--orange-hover: #E63500;
 	--purple: #8B5CF6;
 	--black: #000000;
 	--white: #ffffff;
+	--bs-dark-gray: #818181;
+	--green-check: #0AC2A1;
 	--text-light: #9CA3AF;
+	--text-dark: rgba(0, 0, 0, 0.7);
 }
 
 body {
@@ -39,6 +43,12 @@ body {
 	opacity: 1;
 }
 
+.terminal-symbol {
+	width: 3.65rem;
+	height: 4.875rem;
+	fill: none;
+}
+
 .btn-orange {
 	background: var(--orange);
 	color: #fff;
@@ -49,8 +59,8 @@ body {
 }
 
 .btn-orange:hover {
-	background: #e63400;
-	color: #fff;
+	background-color: var(--orange-hover);
+	color: var(--white);
 }
 
 .btn-white {
@@ -59,22 +69,6 @@ body {
 	border: none;
 	padding: 0.75rem 1.5rem;
 	border-radius: 0.5rem;
-}
-
-.hero-section {
-	padding: 8rem 0 6rem;
-	position: relative;
-	overflow: hidden;
-}
-
-.hero-deco {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 50%;
-	height: 100%;
-	background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.2), transparent);
-	pointer-events: none;
 }
 
 .tag {
@@ -144,15 +138,6 @@ body {
 	font-size: 1.5rem;
 }
 
-.badge-plus {
-	background: var(--orange);
-	color: #fff;
-	padding: 0.25rem 0.75rem;
-	border-radius: 0.25rem;
-	font-size: 1rem;
-	font-weight: 700;
-}
-
 .tier-label {
 	background: rgba(139, 92, 246, 0.1);
 	color: var(--purple);
@@ -161,23 +146,6 @@ body {
 	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 0.875rem;
-}
-
-.footer-cta {
-	background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(255, 59, 10, 0.2));
-	border: 1px solid rgba(255, 59, 10, 0.3);
-	padding: 2rem;
-	border-radius: 1rem;
-}
-
-.key-icon {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem 1rem;
-	background: rgba(0, 0, 0, 0.05);
-	border-radius: 0.5rem;
-	margin: 0 0.5rem;
 }
 
 .key-label {
@@ -344,7 +312,7 @@ footer a:hover {
 	top: 0;
 	width: 12px;
 	height: 12px;
-	background-color: #FF3B0A;
+	background-color: var(--orange);
 	border-radius: 50%;
 }
 
@@ -443,6 +411,7 @@ textarea.form-control-custom {
 }
 
 /* Comparison Section */
+
 .comparison-section {
 	background-color: var(--white);
 	color: var(--black);
@@ -467,12 +436,13 @@ textarea.form-control-custom {
 	color: var(--text-dark);
 }
 
-.key-icon {
+.addon-circle {
 	width: 24px;
 	height: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	border: 2px solid var(--green-check);
+	border-radius: 50%;
+	background: transparent;
+	display: inline-block;
 }
 
 .check-icon {
@@ -555,7 +525,22 @@ textarea.form-control-custom {
 	letter-spacing: 0.1em;
 }
 
-/* MDR Column Highlight */
+/* Key Legend */
+.pricing-key {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2.5rem;
+	margin-bottom: 3rem;
+	padding: 1rem 2rem;
+	background: #f8f9fa;
+	border-radius: 50px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* MDR Column Highlight
 .mdr-highlight {
 	position: relative;
 }
@@ -571,3 +556,54 @@ textarea.form-control-custom {
 	filter: blur(20px);
 	z-index: -1;
 }
+
+.hero-section {
+	padding: 8rem 0 6rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-deco {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.2), transparent);
+	pointer-events: none;
+}
+
+.key-icon {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-cta {
+	background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(255, 59, 10, 0.2));
+	border: 1px solid rgba(255, 59, 10, 0.3);
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+.key-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 0.5rem;
+	margin: 0 0.5rem;
+}
+
+.badge-plus {
+	background: var(--orange);
+	color: #fff;
+	padding: 0.25rem 0.75rem;
+	border-radius: 0.25rem;
+	font-size: 1rem;
+	font-weight: 700;
+}
+*/
